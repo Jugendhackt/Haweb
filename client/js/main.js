@@ -6,15 +6,15 @@ function addtab(tab) {
   var newtab = document.createElement("a");
 
   newtab.href = "javascript:void(0)";
-  if (button.addEventListener) {  // all browsers except IE before version 9
-      button.addEventListener ("mouseup", function () {OnButtonUp (button)}, false);
+  if (newtab.addEventListener) {  // all browsers except IE before version 9
+      newtab.addEventListener ("mouseup", function () {changetab(tab)}, false);
   }
   else {
-    if (button.attachEvent) {   // IE before version 9
-       button.attachEvent ("onmouseup", function () {OnButtonUp (button)});
-     }
+    console.log("Your Browser don't support addEventListener");
    }
   newtab.innerHTML = tab;
+  newtab.id = tab ;
+
 
   tabs.appendChild(newtab);
 
@@ -26,11 +26,17 @@ function tabcontent(tab,content) {
 
 }
 
-function changetab(tab) {
-  tab.className = 'active'
-}
-
 
 for (var tab in tablist) {
     addtab(tablist[tab]);
 }
+
+function changetab(tab) {
+  for (var oldtab in tablist) {
+      document.getElementById(tablist[oldtab]).className = '';
+  }
+  gettab = document.getElementById(tab);
+  gettab.className = 'active';
+  var content = document.getElementById('content')
+}
+changetab(tablist[0])
