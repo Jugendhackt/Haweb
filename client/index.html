@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ononline="onFunction()" onoffline="offFunction">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/alerts.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Anton K" name="author">
+    <meta content="" name="description">
+    <script src="js/checkonline.js" charset="utf-8"></script>
+    <link href="css/vanillaCalendar.css" rel="stylesheet">
+
+  </head>
+  <body ononline="onFunction()" onoffline="offFunction()">
+
+    <div class="topnav" id="myTopnav">
+      <a class="desktop" style="float:right"  href="#settings">
+        <img class="desktop" src="other/settings.svg" alt="">
+      </a>
+      <a class="icon settings" href="#settings">
+        <img  src="other/settings.svg" alt=""></a>
+      <a href="javascript:void(0);" class="icon" onmouseup="mobliebutton()">
+        <img src="other/menu.svg" alt="">
+      </a>
+    </div>
+
+    <div id="alerts" class="alerts" style="padding-left:0%">
+      <div class="alert warning">
+        <span class="closebtn">&times;</span>
+        <strong>Warning!</strong> Wartungsarbeiten
+      </div>
+    </div>
+
+    <div class="content" id="content" style="padding-left:1%;margin-top: 1%;">
+      <input type="button" value="+" onclick="addRow()">
+      <div class="loading">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+
+
+    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/menu.js" charset="utf-8"></script>
+    <script src="js/alerts.js" charset="utf-8"></script>
+
+  </body>
+</html>
