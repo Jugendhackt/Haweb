@@ -29,10 +29,13 @@ print "</html>"
 
 log.write("["+str(now)+"] Login of "+ str(username)+"\n")
 
-mystring = "hallo"
+def hash_password(password):
+    # uuid is used to generate a random number
+    salt = uuid.uuid4().hex
+    return hashlib.sha256(salt.encode() + password.encode()).hexdigest() + ':' + salt
 
-hashm = hashlib.md5(mystring.encode())
+def check_password(hashed_password, user_password):
+    password, salt = hashed_password.split(':')
+    return password == hashlib.sha256(salt.encode() + user_password.encode()).hexdigest()
 
-log.write(str(hashm.hexdigest())+"\n")
-
-log.close()
+hashed_password = hash_password(new_pass)
