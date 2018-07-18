@@ -1,6 +1,6 @@
 //Get and post
 
-function sendData(url,data) {
+function postData(url,data) {
   var XHR = new XMLHttpRequest();
   var urlEncodedData = "";
   var urlEncodedDataPairs = [];
@@ -34,13 +34,21 @@ function sendData(url,data) {
   // Finally, send our data.
   XHR.send(urlEncodedData);
 }
+function getData(url) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", url, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
 
 
 //Tabs
-var tablist = ["Home","Fachwissen","Hausaufgaben","Chat"]
+
+var content = JSON.parse(getData("/cgi-bin/content.py?lang=de"));
+
 
 function addtab(tab) {
-  var tabs = document.getElementById('myTopnav');
+  var content = document.getElementById('myTopnav');
   var newtab = document.createElement("a");
 
   newtab.href = "javascript:void(0)";
@@ -54,27 +62,26 @@ function addtab(tab) {
   newtab.id = tab ;
 
 
-  tabs.appendChild(newtab);
+  content.appendChild(newtab);
 
 
 
 }
 
-function tabcontent(tab,content) {
 
-}
-
-
-for (var tab in tablist) {
-    addtab(tablist[tab]);
-}
-
-function changetab(tab) {
-  for (var oldtab in tablist) {
-      document.getElementById(tablist[oldtab]).className = '';
+function changetab(tabid) {
+  for (var oldtab in content.Tabs) {
+      document.getElementById(content.Tabs[oldtab]).className = '';
   }
-  gettab = document.getElementById(tab);
-  gettab.className = 'active';
-  var content = document.getElementById('content')
+  document.getElementById(tab).className = 'active';
+  var contentpage = document.getElementById('content');
+  console.log(content.Content[tab]);
+  contentpage.innerHTML = content.Content[tab];
 }
-changetab(tablist[0])
+console.log(content.Tabs);
+console.log(content.Content);
+for (var tab in content.Tabs) {
+    addtab(content.Tabs[tab]);
+}
+
+changetab("tab1")
