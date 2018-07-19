@@ -7,8 +7,8 @@ for row in c.execute('SELECT * FROM Users'):
 lang = raw_input("Lang:")
 tabs = []
 
-for line in c.execute('SELECT * FROM Tabcontent WHERE Language =\"'+lang+'\"'):
-    tabs.append(line[2])
+for line in c.execute('SELECT Tabcontent FROM Tabcontent WHERE Language =\"'+lang+'\"'):
+    tabs.append(line[0])
 print tabs
 """
 if lang == "de":

@@ -47,19 +47,19 @@ function getData(url) {
 var content = JSON.parse(getData("/cgi-bin/content.py?lang=de"));
 
 
-function addtab(tab) {
+function addtab(tabid,tabname) {
   var content = document.getElementById('myTopnav');
   var newtab = document.createElement("a");
 
   newtab.href = "javascript:void(0)";
   if (newtab.addEventListener) {  // all browsers except IE before version 9
-      newtab.addEventListener ("mouseup", function () {changetab(tab)}, false);
+      newtab.addEventListener ("mouseup", function () {changetab(tabid)}, false);
   }
   else {
     console.log("Your Browser don't support addEventListener");
    }
-  newtab.innerHTML = tab;
-  newtab.id = tab ;
+  newtab.innerHTML = tabname;
+  newtab.id = tabid ;
 
 
   content.appendChild(newtab);
@@ -71,17 +71,17 @@ function addtab(tab) {
 
 function changetab(tabid) {
   for (var oldtab in content.Tabs) {
-      document.getElementById(content.Tabs[oldtab]).className = '';
+      document.getElementById(oldtab).className = '';
   }
-  document.getElementById(tab).className = 'active';
+  document.getElementById(tabid).className = 'active';
   var contentpage = document.getElementById('content');
-  console.log(content.Content[tab]);
-  contentpage.innerHTML = content.Content[tab];
+  console.log(content.Content[tabid]);
+  contentpage.innerHTML = content.Content[tabid];
 }
 console.log(content.Tabs);
 console.log(content.Content);
 for (var tab in content.Tabs) {
-    addtab(content.Tabs[tab]);
+    addtab(tab,content.Tabs[tab]);
 }
 
 changetab("tab1")
