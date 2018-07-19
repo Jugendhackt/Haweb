@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/alerts.css">
     <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/window.css">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Anton K" name="author">
@@ -17,10 +18,10 @@
   <body ononline="onFunction()" onoffline="offFunction()">
 
     <div class="topnav" id="myTopnav">
-      <a class="desktop" style="float:right"  href="javascript:void(0)">
+      <a class="desktop" style="float:right"  onmouseup="opensettings()"  href="javascript:void(0)">
         <img class="desktop"   href="javascript:void(0)" src="other/settings.svg" alt="">
       </a>
-      <a class="icon settings" href="javascript:void(0)">
+      <a class="icon settings"  onmouseup="opensettings()" href="javascript:void(0)">
         <img  src="other/settings.svg" alt=""></a>
       <a href="javascript:void(0);" class="icon" onmouseup="mobliebutton()">
         <img src="other/menu.svg" alt="">
@@ -35,7 +36,7 @@
     </div>
 
     <div class="content" id="content" style="padding-left:1%;margin-top: 1%;">
-      <input type="button" value="+" onclick="addRow()">
+      <input type="button" value="+" onmouseup="addRow()">
       <div class="loading">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
@@ -44,10 +45,34 @@
       </form>
     </div>
 
+    <div id="settings" class="modal">
+
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <span onmouseup="closesettings()" class="close" title="Close Modal">&times;</span>
+        </div>
+
+        <div class="container">
+          <h1>Settings</h1>
+          <label for="lang"><b>Language</b></label>
+          <select name="lang" >
+  				  <option value="fr">Francais</option>
+  				  <option value="de">Deutsch</option>
+  				  <option value="en">English</option>
+  				</select>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onmouseup="closesettings()" class="cancelbtn">Cancel</button>
+          <button type="button" name="Save"></button>
+        </div>
+      </form>
+    </div>
 
     <script src="js/main.js" charset="utf-8"></script>
     <script src="js/menu.js" charset="utf-8"></script>
     <script src="js/alerts.js" charset="utf-8"></script>
+    <script src="js/settings.js" charset="utf-8"></script>
 
   </body>
 </html>
