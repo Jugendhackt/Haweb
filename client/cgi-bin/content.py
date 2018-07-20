@@ -9,13 +9,16 @@ conn = sqlite3.connect('/home/anton/Dokumente/Haweb/client/other/database.db')
 c = conn.cursor()
 
 tabs = []
-content = ["Home","Fachwissen","Hausaufgaben","Chat"]
+content = []
 
 for line in c.execute('SELECT Tabname FROM Tabcontent WHERE Language =\"'+lang+'\"'):
     tabs.append(line[0])
+for line in c.execute('SELECT Content FROM Tabcontent WHERE Language =\"'+lang+'\"'):
+    content.append(line[0])
+
 
 print "Content-Type: application/json\r\n\r\n"
-print " {"
+print "{"
 print "\"Tabs\":{"
 print " \"tab1\":\"" + tabs[0] + "\""
 print ",\"tab2\":\"" + tabs[1] + "\""
