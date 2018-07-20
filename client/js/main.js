@@ -33,19 +33,19 @@ function postData(url,data) {
 
   // Finally, send our data.
   XHR.send(urlEncodedData);
+
 }
 function getData(url) {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", url, false ); // false for synchronous request
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", url, false );
+    xmlHttp.send();
     return xmlHttp.responseText;
 }
 
 
 //Tabs
 
-var content = JSON.parse(getData("/cgi-bin/content.py?lang=de"));
-
+var content = JSON.parse(getData("/cgi-bin/content.py?lang=en"));
 
 function addtab(tabid,tabname) {
   var content = document.getElementById('myTopnav');
@@ -75,11 +75,8 @@ function changetab(tabid) {
   }
   document.getElementById(tabid).className = 'active';
   var contentpage = document.getElementById('content');
-  console.log(content.Content[tabid]);
   contentpage.innerHTML = content.Content[tabid];
 }
-console.log(content.Tabs);
-console.log(content.Content);
 for (var tab in content.Tabs) {
     addtab(tab,content.Tabs[tab]);
 }
