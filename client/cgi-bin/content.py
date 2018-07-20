@@ -11,7 +11,7 @@ c = conn.cursor()
 tabs = []
 content = ["Home","Fachwissen","Hausaufgaben","Chat"]
 
-for line in c.execute('SELECT Tabcontent FROM Tabcontent WHERE Language =\"'+lang+'\"'):
+for line in c.execute('SELECT Tabname FROM Tabcontent WHERE Language =\"'+lang+'\"'):
     tabs.append(line[0])
 
 print "Content-Type: application/json\r\n\r\n"

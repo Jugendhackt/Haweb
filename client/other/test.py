@@ -7,7 +7,7 @@ for row in c.execute('SELECT * FROM Users'):
 lang = raw_input("Lang:")
 tabs = []
 
-for line in c.execute('SELECT Tabcontent FROM Tabcontent WHERE Language =\"'+lang+'\"'):
+for line in c.execute('SELECT Tabname FROM Tabcontent WHERE Language =\"'+lang+'\"'):
     tabs.append(line[0])
 print tabs
 """
