@@ -18,10 +18,7 @@
   <body ononline="onFunction()" onoffline="offFunction()">
 
     <div class="topnav" id="myTopnav">
-      <a class="desktop" style="float:right"  onmouseup="opensettings()"  href="javascript:void(0)">
-        <img class="desktop"   href="javascript:void(0)" src="other/settings.svg" alt="">
-      </a>
-      <a class="icon settings"  onmouseup="opensettings()" href="javascript:void(0)">
+      <a class="settings" style="float:right"  onmouseup="opensettings()" href="javascript:void(0)">
         <img  src="other/settings.svg" alt=""></a>
       <a href="javascript:void(0);" class="icon" onmouseup="mobliebutton()">
         <img src="other/menu.svg" alt="">
@@ -36,13 +33,11 @@
     </div>
 
     <div class="content" id="content" style="padding-left:1%;margin-top: 1%;">
-      <input type="button" value="+" onmouseup="addRow()">
       <div class="loading">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
       </div>
-      </form>
     </div>
 
     <div id="settings" class="modal">
@@ -64,7 +59,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
           <button type="button" onmouseup="closesettings()" class="cancelbtn">Cancel</button>
-          <button type="button" name="Save"></button>
+          <button type="button" class="okaybtn" name="Save">Save</button>
         </div>
       </form>
     </div>
