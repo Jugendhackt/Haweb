@@ -1,8 +1,12 @@
-function opensettings() {
-  document.getElementById('settings').style.display='block'
-}
-function closesettings() {
-  document.getElementById('settings').style.display='none'
+var settingsstatus = false
+function togglesettigs(esc) {
+  if(settingsstatus == false && !esc){
+    document.getElementById('settings').style.display='block';
+    settingsstatus = true;
+  }else if (settingsstatus == true || esc) {
+    document.getElementById('settings').style.display='none';
+    settingsstatus = false;
+  }
 }
 // Get the modal
 var modal = document.getElementById('settings');
@@ -16,6 +20,6 @@ window.onmouseup = function(event) {
 document.onkeydown = function(evt) {
     evt = evt || window.event;
     if (evt.keyCode == 27) {
-        closesettings();
+        togglesettigs(true);
     }
 };
