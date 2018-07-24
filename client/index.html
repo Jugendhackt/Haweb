@@ -18,8 +18,9 @@
   <body ononline="onFunction()" onoffline="offFunction()">
 
     <div class="topnav" id="myTopnav">
-      <a class="settings" style="float:right"  onmouseup="togglesettigs()" href="javascript:void(0)">
-        <img  src="other/settings.svg" alt=""></a>
+      <a class="settings" style="float:right" onmouseup="togglesettigs()" href="javascript:void(0)">
+        <img  src="other/settings.svg" alt="">
+      </a>
       <a href="javascript:void(0);" class="icon" onmouseup="mobliebutton()">
         <img src="other/menu.svg" alt="">
       </a>
@@ -42,7 +43,7 @@
 
     <div id="settings" class="modal">
 
-      <form class="modal-content animate" action="/action_page.php">
+      <form class="modal-content animate" action="javascript:void(0)">
         <div class="imgcontainer">
           <span onmouseup="togglesettigs()" class="close" title="Close Modal">&times;</span>
         </div>
@@ -59,7 +60,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
           <button type="button" onmouseup="togglesettigs()" class="cancelbtn">Cancel</button>
-          <button type="button" class="okaybtn" name="Save">Save</button>
+          <button type="button" onmouseup="savesettings" class="okaybtn" name="Save">Save</button>
         </div>
       </form>
     </div>
