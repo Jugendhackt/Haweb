@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+
+.split {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.big{
+  font-weight: bold;
+}
+.left {
+    left: 0;
+    width: 20%;
+    border-color: #2196F3 ;
+    border-right: 6px solid #ccc ;
+}
+
+.right {
+    right: 0;
+    width: 75%;
+    height: 100%;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.time {
+    float: right;
+    color: #aaa;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f1f1f1;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="split left">
+  <ul>
+    <li class="chattab"><a class="active" href="#home">Public</a></li>
+    <li class="chattab"><a href="#news">Class</a></li>
+    <li class="chattab big"><a href="">Direct Messages</a></li>
+  </ul>
+</div>
+<div class="split right">
+    <div class="container">
+    	<span>Y</span>
+      <p>Hello. How are you today?</p>
+      <span class="time">11:00</span>
+    </div>
+
+    <div class="container darker">
+    	<span>X</span>
+      <p>Hey! I'm fine. Thanks for asking!</p>
+      <span class="time">11:01</span>
+    </div>
+
+    <div class="container">
+    	<span>Y</span>
+      <p>Sweet! So, what do you wanna do today?</p>
+      <span class="time">11:02</span>
+    </div>
+
+    <div class="container darker">
+    	<span>X</span>
+      <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+      <span class="time">11:05</span>
+    </div>
+</div>
+</body>
+</html>
