@@ -21,5 +21,5 @@ print " \"tab1\":\"" + tabs[0] + "\""
 print ",\"tab2\":\"" + tabs[1] + "\""
 print ",\"tab3\":\"" + tabs[2] + "\""
 print ",\"tab4\":\"" + tabs[3] + "\""
-print "}
+print "}"
 print "}"
