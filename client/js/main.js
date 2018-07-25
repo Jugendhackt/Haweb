@@ -106,7 +106,6 @@ function changetab(tabid) {
   }
   document.getElementById(tabid).className = 'active';
   var contentpage = document.getElementById('content');
-  contentpage.innerHTML = content.Content[tabid];
 }
 for (var tab in content.Tabs) {
     addtab(tab,content.Tabs[tab]);
