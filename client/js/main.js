@@ -73,7 +73,7 @@ function getData(url) {
 }
 
 
-var content = JSON.parse(getData("/cgi-bin/content.py?lang=de"));
+var content = JSON.parse(getData("/cgi-bin/tabs.py?lang=en"));
 
 //Tabs
 
