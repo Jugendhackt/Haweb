@@ -30,6 +30,34 @@ function checkCookie(cname) {
 }
 //Get and post
 
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("html-scr");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("html-scr");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+
 function postData(url,data) {
   var XHR = new XMLHttpRequest();
   var urlEncodedData = "";
@@ -72,6 +100,19 @@ function getData(url) {
     return xmlHttp.responseText;
 }
 
+function httprequest_get(url) {
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", url, true );
+  xmlHttp.onreadystatechange = function() {
+    if (xmlHttp.readyState == 4) {
+      if (xmlHttp.status == 200) {
+        console.log(xmlHttp);
+      }
+
+    }
+  }
+  xmlHttp.send();
+}
 
 var content = JSON.parse(getData("/cgi-bin/tabs.py?lang=en"));
 
@@ -105,6 +146,8 @@ function changetab(tabid) {
       document.getElementById(oldtab).className = '';
   }
   document.getElementById(tabid).className = 'active';
+  window.history.pushState(content.Tabs[tabid], 'Hausaufgaben Webseite', '#'+content.Tabs[tabid]);
+
   var contentpage = document.getElementById('content');
 }
 for (var tab in content.Tabs) {
