@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
     // create websocket instance
-    var mySocket = new WebSocket("ws://localhost:8888/ws");
+    var mySocket = new WebSocket("ws://"+location.hostname+":8888/ws");
     // add event listener reacting when message is received
     mySocket.onmessage = function (event) {
         var output = document.getElementById("chatcontent");

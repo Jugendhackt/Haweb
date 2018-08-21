@@ -19,9 +19,6 @@
     float: right;
     color: #aaa;
 }
-.options{
-  float: right;
-}
 ul {
     list-style-type: none;
     margin: 0;
@@ -29,4 +26,13 @@ ul {
     height: 100%;
     background-color: #f1f1f1;
     overflow: auto;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }

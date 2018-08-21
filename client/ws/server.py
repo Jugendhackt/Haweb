@@ -7,6 +7,7 @@ import time
 
 class WSHandler(tornado.websocket.WebSocketHandler):
     clients = []
+    messages = []
     def open(self):
         self.clients.append(self)
         print '[Server] New connection'
