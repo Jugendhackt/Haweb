@@ -15,10 +15,6 @@ class WSHandler(tornado.websocket.WebSocketHandler):
     def on_message(self, message):
 
         clientadress = self.request.remote_ip
-
-        if message == "" or message == "Hallo":
-            self.write_message("Du darfst das nicht Schreiben")
-            return
         print '[Chat] '+clientadress+': %s' % message
         self.sendall(message,clientadress)
 
