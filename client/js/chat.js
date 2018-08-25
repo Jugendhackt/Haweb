@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+ window.addEventListener("load", function() {
     // create websocket instance
     var mySocket = new WebSocket("ws://"+location.hostname+":8888/ws");
     // add event listener reacting when message is received
@@ -8,10 +8,9 @@ window.addEventListener("load", function() {
         var newmessage = JSON.parse(event.data)
         console.log(newmessage);
         
-        var newmessage_html = '<div class="chatcontent"><div class="container"><span>'+newmessage.message.user+'</span><p>'+newmessage.message.text+'</p><span class="time">'+newmessage.message.time+'</span></div>';
-        console.log(newmessage_html);
-        output.innerHTML = output.innerHTML + newmessage_html;
-
+        var newmessage_html = document.createElement('div');
+        newmessage_html.innerHTML = '<div class="chatcontent"><div class="container"><span>'+newmessage.message.user+'</span><p>'+newmessage.message.text+'</p><span class="time">'+newmessage.message.time+'</span></div>';
+        output.appendChild(newmessage_html);
     }
     var formchat = document.getElementById("chatsend");
     var input = document.getElementById("input"); 
