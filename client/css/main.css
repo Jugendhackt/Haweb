@@ -51,7 +51,7 @@ However, delay the fade out process for 2.5 seconds */
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: darkgray;
+    background-color: #3339ff;
     text-align: left;
 }
 .footer2 {
