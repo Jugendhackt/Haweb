@@ -23,8 +23,3 @@
         return false;
  })
 });
-
-function sclear() {
-  var output = document.getElementById("chatcontent");
-  output.innerHTML = "";
-}
