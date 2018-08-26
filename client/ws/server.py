@@ -13,17 +13,16 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         print '[Server] New connection'
 
     def on_message(self, message):
-
         clientadress = self.request.remote_ip
         print '[Chat] '+clientadress+': %s' % message
         self.sendall(message,clientadress)
-
     def on_close(self):
         self.clients.remove(self)
         print '[Server] Connection closed'
     def check_origin(self, origin):
         return True
     def sendall(self,message,name=""):
+        message = message.replace('"',"'")
         time_m = str(time.strftime('%H:%M:%S', time.localtime()))
         for client in self.clients:
             client.write_message('{"message":{ "user":"'+name+'","text":"'+message+'","time":"'+time_m+'"}}')
