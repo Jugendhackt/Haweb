@@ -1,4 +1,5 @@
- window.addEventListener("load", function() {
+ window.addEventListener("load",connect());
+function connect() {
     // create websocket instance
     var mySocket = new WebSocket("ws://"+location.hostname+":8888/ws");
     // add event listener reacting when message is received
@@ -13,7 +14,12 @@
         output.appendChild(newmessage_html);
     };
     var formchat = document.getElementById("chatsend");
-    var input = document.getElementById("input"); 
+    var input = document.getElementById("input");
+    mySocket.onclose = function(e){
+        console.log("Connection closed");
+        console.log("Try to reconnect");
+        connect();
+    };
     formchat.addEventListener("submit", function (e) {
         // on forms submission send input to our server
         input_text = input.value;
@@ -21,5 +27,5 @@
         e.preventDefault();
         input.value = "";
         return false;
- });
-});
+
+ });}
