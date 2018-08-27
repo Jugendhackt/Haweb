@@ -5,7 +5,7 @@ lang  = form.getvalue('lang')
 
 
 import sqlite3
-conn = sqlite3.connect('.../other/database.db')
+conn = sqlite3.connect('../other/database.db')
 c = conn.cursor()
 
 tabs = []
