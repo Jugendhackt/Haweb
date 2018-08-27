@@ -15,7 +15,8 @@ class WSHandler(tornado.websocket.WebSocketHandler):
             self.write_message(message)
     def on_message(self, message):
         clientadress = self.request.remote_ip
-        print '[Chat] '+clientadress+': %s' % message
+        time_m = str(time.strftime('%H:%M:%S', time.localtime()))
+        print '[Chat] '+time_m+" "+clientadress+' %s' % message
         self.sendall(message,clientadress)
         self.messages.append(self.makejsonmessage(message,clientadress))
     def on_close(self):

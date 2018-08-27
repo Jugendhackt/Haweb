@@ -1,10 +1,10 @@
 #!/usr/bin/python
-def httpserver():
-    from BaseHTTPServer import HTTPServer
-    from CGIHTTPServer import CGIHTTPRequestHandler
+def httpserver(): # Define the http server
+    from BaseHTTPServer import HTTPServer # Importing Base Server
+    from CGIHTTPServer import CGIHTTPRequestHandler # importing CGI Server
 
     serv = HTTPServer(('',8000),CGIHTTPRequestHandler)
-    print 'Webserver started.'
-    serv.serve_forever()
+    print 'Webserver started.' # Print the progress
+    serv.serve_forever() # The Server runs forever
     
-httpserver()
+httpserver() # Run the Server
