@@ -12,7 +12,7 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         return str(time.strftime('%H:%M:%S', time.localtime()))
     def open(self):
         self.clients.append(self)
-        print '[Server] '+ self.gettime +' '+'New connection'
+        print '[Server] New connection'
         for message in self.messages:
             self.write_message(message)
     def on_message(self, message):
@@ -22,7 +22,7 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         self.messages.append(self.makejsonmessage(message,clientadress))
     def on_close(self):
         self.clients.remove(self)
-        print '[Server] '+ self.gettime +' '+'Connection closed'
+        print '[Server] Connection closed'
     def check_origin(self, origin):
         return True
     def makejsonmessage(self,message,name=""):
