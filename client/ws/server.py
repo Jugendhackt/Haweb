@@ -8,26 +8,26 @@ import time
 class WSHandler(tornado.websocket.WebSocketHandler):
     clients = []
     messages = []
+    def gettime(self):
+        return str(time.strftime('%H:%M:%S', time.localtime()))
     def open(self):
         self.clients.append(self)
-        print '[Server] New connection'
+        print '[Server] '+ self.gettime +' '+'New connection'
         for message in self.messages:
             self.write_message(message)
     def on_message(self, message):
         clientadress = self.request.remote_ip
-        time_m = str(time.strftime('%H:%M:%S', time.localtime()))
-        print '[Chat] '+time_m+" "+clientadress+' %s' % message
+        print '[Chat] '+self.gettime+" "+clientadress+' %s' % message
         self.sendall(message,clientadress)
         self.messages.append(self.makejsonmessage(message,clientadress))
     def on_close(self):
         self.clients.remove(self)
-        print '[Server] Connection closed'
+        print '[Server] '+ self.gettime +' '+'Connection closed'
     def check_origin(self, origin):
         return True
     def makejsonmessage(self,message,name=""):
         message = message.replace('"',"'")
-        time_m = str(time.strftime('%H:%M:%S', time.localtime()))
-        return '{"message":{ "user":"'+name+'","text":"'+message+'","time":"'+time_m+'"}}'
+        return '{"message":{ "user":"'+name+'","text":"'+message+'","time":"'+self.gettime+'"}}'
     def sendall(self,message,name=""):
         for client in self.clients:
             client.write_message(self.makejsonmessage(message,name))
