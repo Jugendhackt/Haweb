@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/loading.css">
-    <link rel="stylesheet" href="css/window.css">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="Anton K" name="author">
-    <meta content="Julius S" name="author">
-    <meta content="" name="description">
-    <link href="css/vanillaCalendar.css" rel="stylesheet">
-    <title>Hausaufgaben Webseite</title>
-  </head>
-  <body>
 
-    <nav class="topnav" id="myTopnav">
-      <a class="settings" style="float:right" onmouseup="togglesettigs()" href="javascript:void(0)">
-        <img  src="other/settings.svg" alt="">
-      </a>
-      <a href="javascript:void(0);" class="icon" onmouseup="mobliebutton()">
-        <img src="other/menu.svg" alt="">
-      </a>
-    </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/window.css">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Anton K" name="author">
+  <meta content="Julius S" name="author">
+  <meta content="" name="description">
+  <link href="css/vanillaCalendar.css" rel="stylesheet">
+  <title>Hausaufgaben Webseite</title>
+</head>
 
-    <div id="alerts" style="padding-left:0%">
+<body>
 
-      
+  <nav class="topnav" id="myTopnav">
+    <a class="settings" style="float:right" onmouseup="togglesettigs()" href="javascript:void(0)">
+      <img src="other/settings.svg" alt="">
+    </a>
+    <a href="javascript:void(0);" class="icon" onmouseup="mobliebutton()">
+      <img src="other/menu.svg" alt="">
+    </a>
+  </nav>
+
+  <div id="alerts" style="padding-left:0%">
+
+
+  </div>
+
+  <div class="content" id="content" style="padding-left:1%;margin-top: 1%;">
+
+    <div class="loading">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
     </div>
+  </div>
 
-    <div class="content" id="content" style="padding-left:1%;margin-top: 1%;">
+  <div class="footer footer2">
+    <a href="#Impressium">Impression</a>
+  </div>
 
-      <div class="loading">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
+  <div id="settings" class="modal">
+
+    <form class="modal-content animate" action="javascript:void(0)">
+      <div class="imgcontainer">
+        <span onmouseup="togglesettigs()" class="close" title="">&times;</span>
       </div>
-    </div>
 
-    <div class="footer footer2">
-      <a href="#Impressium">Impression</a>
-    </div>
+      <div class="container">
+        <h1>Settings</h1>
+        <label for="lang"><b>Language</b></label>
+        <select name="lang">
+          <option value="fr">Francais</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+        </select>
+      </div>
 
-    <div id="settings" class="modal">
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onmouseup="togglesettigs()" class="cancelbtn">Cancel</button>
+        <button type="button" onmouseup="savesettings" class="okaybtn" name="Save">Save</button>
+      </div>
+    </form>
+  </div>
 
-      <form class="modal-content animate" action="javascript:void(0)">
-        <div class="imgcontainer">
-          <span onmouseup="togglesettigs()" class="close" title="">&times;</span>
-        </div>
+  <script src="js/main.js" charset="utf-8"></script>
+  <script src="js/alerts.js" charset="utf-8"></script>
+  <script src="js/checkonline.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
+  <script src="js/settings.js" charset="utf-8"></script>
 
-        <div class="container">
-          <h1>Settings</h1>
-          <label for="lang"><b>Language</b></label>
-          <select name="lang" >
-  				  <option value="fr">Francais</option>
-  				  <option value="de">Deutsch</option>
-  				  <option value="en">English</option>
-  				</select>
-        </div>
+</body>
 
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" onmouseup="togglesettigs()" class="cancelbtn">Cancel</button>
-          <button type="button" onmouseup="savesettings" class="okaybtn" name="Save">Save</button>
-        </div>
-      </form>
-    </div>
-
-    <script src="js/main.js" charset="utf-8"></script>
-    <script src="js/alerts.js" charset="utf-8"></script>
-    <script src="js/checkonline.js" charset="utf-8"></script>
-    <script src="js/menu.js" charset="utf-8"></script>
-    <script src="js/settings.js" charset="utf-8"></script>
-
-  </body>
 </html>

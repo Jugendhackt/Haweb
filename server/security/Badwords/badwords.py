@@ -1,4 +1,4 @@
-badwordsfile = open("badwords.txt","r")
+badwordsfile = open("./security/Badwords/badwords.txt","r")
 badwords = []
 for line in badwordsfile:
     line = line.strip("\n")
