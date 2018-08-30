@@ -8,5 +8,7 @@
         alert.innerHTML = text;
         alertbox.appendChild(alert);
         // After 3 seconds, remove the show class from DIV
-        setTimeout(function(){ alert.className = alert.className.replace("show", ""); }, 3000);
+        setTimeout(function () {
+            alert.className = alert.className.replace("show", "");
+        }, 3000);
     }

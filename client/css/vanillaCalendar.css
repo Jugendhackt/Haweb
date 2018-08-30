@@ -8,7 +8,9 @@
   --vcal-selected-color: #333;
 }
 
-#v-cal *, #v-cal *:before, #v-cal *:after {
+#v-cal *,
+#v-cal *:before,
+#v-cal *:after {
   box-sizing: border-box;
 }
 
@@ -37,6 +39,7 @@
   overflow: visible;
   padding: 0;
   text-align: center;
+
   &:active {
     border-radius: var(--vcal-border-radius);
     box-shadow: 0 0 0 2px rgba(var(--vcal-today-bg-color), 0.1)
