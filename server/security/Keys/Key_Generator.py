@@ -12,9 +12,17 @@ for i in range (20):
         randnum = random.choice(num)
         key = key + randnum
 print key
+
+# Write the key
 path =  'keysfile.txt'
 file = open(path, 'a')
 file.write(key)
 file.write('\n')
 file.close
 
+username = input('Username: ') # Choose the Username
+path =  'users.txt'
+file = open(path, 'a')
+file.write(username)
+file.write('\n')
+file.close
