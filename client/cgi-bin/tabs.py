@@ -1,11 +1,12 @@
 #!/usr/bin/python
 import cgi, cgitb
+import os
 form = cgi.FieldStorage()
 lang  = form.getvalue('lang')
 
 
 import sqlite3
-conn = sqlite3.connect('../other/database.db')
+conn = sqlite3.connect(os.getcwd()+'/other/database.db')
 c = conn.cursor()
 
 tabs = []
