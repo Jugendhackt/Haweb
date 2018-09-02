@@ -32,38 +32,6 @@ function checkCookie(cname) {
 }
 //Get and post
 
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("html-scr");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            elmnt.innerHTML = this.responseText;
-          }
-          if (this.status == 404) {
-            elmnt.innerHTML = "Page not found.";
-          }
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("html-scr");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
-
 function postData(url, data) {
   var XHR = new XMLHttpRequest();
   var urlEncodedData = "";
@@ -100,40 +68,41 @@ function postData(url, data) {
 
 }
 
-function getData(url) {
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", url, false);
-  xmlHttp.send();
-  return xmlHttp.responseText;
-}
-
-function httprequest_get(url) {
+function getData(url,variable) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", url, true);
-  xmlHttp.onreadystatechange = function () {
-    if (xmlHttp.readyState == 4) {
-      if (xmlHttp.status == 200) {
-        console.log(xmlHttp);
-      }
+  var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            variable = JSON.parse(this.responseText);
+            console.log(variable);
+          }
 
-    }
-  }
+        }
+  };
+
   xmlHttp.send();
+  return true;
 }
 
-var content = JSON.parse(getData("/cgi-bin/tabs.py?lang=en"));
+
+var tabs;
+getData("/cgi-bin/tabs.py?lang=en",tabs);
+
+console.log(tabs);
 
 //Tabs
 
 
 function addtab(tabid, tabname) {
-  var content = document.getElementById('myTopnav');
+  var tablist = document.getElementById('myTopnav');
   var newtab = document.createElement("a");
 
   newtab.href = "javascript:void(0)";
   if (newtab.addEventListener) { // all browsers except IE before version 9
     newtab.addEventListener("mouseup", function () {
-      changetab(tabid)
+      changetab(tabid);
     }, false);
   } else {
     console.log("Your Browser don't support addEventListener");
@@ -142,7 +111,7 @@ function addtab(tabid, tabname) {
   newtab.id = tabid;
 
 
-  content.appendChild(newtab);
+  tablist.appendChild(newtab);
 
 
 
@@ -150,16 +119,16 @@ function addtab(tabid, tabname) {
 
 
 function changetab(tabid) {
-  for (var oldtab in content.Tabs) {
+  for (var oldtab in tabs.Tabs) {
     document.getElementById(oldtab).className = '';
   }
   document.getElementById(tabid).className = 'active';
-  window.history.pushState(content.Tabs[tabid], 'Hausaufgaben Webseite', '#' + content.Tabs[tabid]);
+  window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '#' + tabs.Tabs[tabid]);
 
   var contentpage = document.getElementById('content');
 }
-for (var tab in content.Tabs) {
-  addtab(tab, content.Tabs[tab]);
+for (var tab in tabs.Tabs) {
+  addtab(tab, tabs.Tabs[tab]);
 }
 
-changetab("tab1")
+changetab("tab1");
