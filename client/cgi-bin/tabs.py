@@ -18,7 +18,7 @@ for line in c.execute('SELECT Tabname FROM Tabcontent WHERE Language =\"'+lang+'
 print "Content-Type: application/json\r\n\r\n"
 print "{"
 print "\"Tabs\":{"
-print " \"tab1\":\"" + tabs[0] + "\""
+print " \"tab1\":\"" + tabs[0] + "\""   
 print ",\"tab2\":\"" + tabs[1] + "\""
 print ",\"tab3\":\"" + tabs[2] + "\""
 print ",\"tab4\":\"" + tabs[3] + "\""
