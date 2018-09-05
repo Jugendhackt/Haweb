@@ -20,12 +20,19 @@
 <body>
 
   <nav class="topnav" id="myTopnav">
-    <a class="settings" style="float:right" onmouseup="togglesettigs()" href="javascript:void(0)">
-      <img src="other/settings.svg" alt="">
-    </a>
-    <a href="javascript:void(0);" class="icon" onmouseup="mobliebutton()">
-      <img src="other/menu.svg" alt="">
-    </a>
+    <span id="left">
+      
+    </span>
+
+    <span id="right"> 
+      <a class="settings" style="float:right" onmouseup="togglesettigs()" href="javascript:void(0)">
+        <img src="other/settings.svg" alt="">
+      </a>
+      <a href="javascript:void(0)" class="icon" onmouseup="mobliebutton()">
+        <img src="other/menu.svg" alt="">
+      </a>
+    </span>
+
   </nav>
 
   <div id="alerts" style="padding-left:0%">
@@ -56,7 +63,7 @@
       <div class="container">
         <h1>Settings</h1>
         <label for="lang"><b>Language</b></label>
-        <select name="lang">
+        <select id="slang" name="lang">
           <option value="fr">Francais</option>
           <option value="de">Deutsch</option>
           <option value="en">English</option>
@@ -65,7 +72,7 @@
 
       <div class="container" style="background-color:#f1f1f1">
         <button type="button" onmouseup="togglesettigs()" class="cancelbtn">Cancel</button>
-        <button type="button" onmouseup="savesettings" class="okaybtn" name="Save">Save</button>
+        <button type="button" onmouseup="savesettings()" class="okaybtn" name="Save">Save</button>
       </div>
     </form>
   </div>
