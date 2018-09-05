@@ -5,5 +5,6 @@ function offFunction() {
 function onFunction() {
     malert("Du bist wieder Online");
 }
-window.addEventListener("online", onFunction())
-window.addEventListener("offline", offFunction())
+
+window.addEventListener('online',  onFunction());
+window.addEventListener('offline', offFunction());
