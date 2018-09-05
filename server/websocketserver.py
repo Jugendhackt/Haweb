@@ -1,9 +1,5 @@
-import tornado.httpserver
 import tornado.websocket
-import tornado.ioloop
-import tornado.web
-import socket
-import time
+
 class WSHandler(tornado.websocket.WebSocketHandler):
     clients = []
     messages = []
@@ -29,19 +25,3 @@ class WSHandler(tornado.websocket.WebSocketHandler):
     def sendall(self,message,name=""):
         for client in self.clients:
             client.write_message(self.makejsonmessage(message,name))
-class MainHandler(tornado.web.RequestHandler):
-    def get(self,url):
-        if url == "client":
-            for line in open("client.html","r"):
-                self.write(line)
-
-
-application = tornado.web.Application([(r'/ws', WSHandler),(r"/(.*)", MainHandler),])
-
-
-if __name__ == "__main__":
-    http_server = tornado.httpserver.HTTPServer(application)
-    http_server.listen(8888)
-    myIP = socket.gethostbyname(socket.gethostname())
-    print '*** Web Server Started at %s***' % myIP
-    tornado.ioloop.IOLoop.instance().start()
