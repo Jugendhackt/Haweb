@@ -68,37 +68,39 @@ function postData(url, data) {
 
 }
 
-function getData(url,variable) {
+function getData(url) {
   var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", url, true);
-  var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            variable = JSON.parse(this.responseText);
-            console.log(variable);
-          }
-
-        }
-  };
-
-  xmlHttp.send();
-  return true;
+  xmlHttp.open("GET", url, false);
+  xmlHttp.send(null);
+  return xmlHttp.responseText;
 }
 
 
 var tabs;
-getData("/cgi-bin/tabs.py?lang=en",tabs);
+tabs = JSON.parse(getData("/cgi-bin/tabs.py?lang="+getCookie("lang")));
 
-console.log(tabs);
 
+function changelanguage(lang){
+  setCookie("lang",lang,1000);
+  tabs = JSON.parse(getData("/cgi-bin/tabs.py?lang="+lang));
+  cleartabs();
+  for (var tab in tabs.Tabs) {
+    addtab(tab, tabs.Tabs[tab]);
+  }
+  changetab("tab1");
+}
+tabidlist = [];
 //Tabs
-
+function cleartabs() {
+  var tablist = document.getElementById("left");
+  tablist.innerHTML = "";
+  setCookie("lang",slang,100);
+}
 
 function addtab(tabid, tabname) {
-  var tablist = document.getElementById('myTopnav');
+  var tablist = document.getElementById('left');
   var newtab = document.createElement("a");
-
+  tabidlist.push(tabid);
   newtab.href = "javascript:void(0)";
   if (newtab.addEventListener) { // all browsers except IE before version 9
     newtab.addEventListener("mouseup", function () {
@@ -113,8 +115,6 @@ function addtab(tabid, tabname) {
 
   tablist.appendChild(newtab);
 
-
-
 }
 
 
@@ -123,7 +123,7 @@ function changetab(tabid) {
     document.getElementById(oldtab).className = '';
   }
   document.getElementById(tabid).className = 'active';
-  window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '#' + tabs.Tabs[tabid]);
+  window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '#' + tabs.Tabs);
 
   var contentpage = document.getElementById('content');
 }
