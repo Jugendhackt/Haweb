@@ -76,13 +76,13 @@ function getData(url) {
 }
 
 
-var tabs;
-tabs = JSON.parse(getData("/cgi-bin/tabs.py?lang="+getCookie("lang")));
-
+var tabs = '{  "Tabs":{   "tab1":"Home"  ,"tab2":"Fachwissen"  ,"tab3":"Hausaufgaben"  ,"tab4":"Chat"  }  }';
+tabs = JSON.parse(tabs);
+  
 
 function changelanguage(lang){
   setCookie("lang",lang,1000);
-  tabs = JSON.parse(getData("/cgi-bin/tabs.py?lang="+lang));
+  //tabs = JSON.parse(getData("localhost:8000/cgi-bin/tabs.py?lang="+lang));
   cleartabs();
   for (var tab in tabs.Tabs) {
     addtab(tab, tabs.Tabs[tab]);
