@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 import tornado.websocket
+import time,json
 
 class WSHandler(tornado.websocket.WebSocketHandler):
     clients = []
@@ -19,9 +21,10 @@ class WSHandler(tornado.websocket.WebSocketHandler):
     def check_origin(self, origin):
         return True
     def makejsonmessage(self,message,name=""):
-        message = message.replace('"',"'")
+        message = message.replace("<","	&#60;") # Info #
+        message = message.replace(">","	&#62;") # Run NO Html Code in chat (I hope)# 
         time_m = str(time.strftime('%H:%M:%S', time.localtime()))
-        return '{"message":{ "user":"'+name+'","text":"'+message+'","time":"'+time_m+'"}}'
+        return '{"message":{ "user":'+json.dumps(name)+',"text":'+json.dumps(message)+',"time":'+json.dumps(time_m)+'}}'
     def sendall(self,message,name=""):
         for client in self.clients:
             client.write_message(self.makejsonmessage(message,name))
