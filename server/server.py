@@ -6,6 +6,9 @@ import socket,time,sys
 import httpserver
 import websocketserver
 
+
+
+
 application = tornado.web.Application([(r'/ws', websocketserver.WSHandler),(r"/(.*)", httpserver.MainHandler),])
 
 
