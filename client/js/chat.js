@@ -9,9 +9,12 @@ var socket;
          var output = document.getElementById("chatcontent");
          // put text into our output div
          var newmessage = JSON.parse(event.data);
-         var newmessage_html = document.createElement('div');
-         newmessage_html.innerHTML = '<div class="chatcontent"><div class="container"><span>' + newmessage.message.user + '</span><p>' + newmessage.message.text + '</p><span class="time">' + newmessage.message.time + '</span></div>';
-         output.appendChild(newmessage_html);
+         console.log(newmessage);
+         if(newmessage.type == "chat"){
+            var newmessage_html = document.createElement('div');
+            newmessage_html.innerHTML = '<div class="chatcontent"><div class="container"><span>' + newmessage.message.user + '</span><p>' + newmessage.message.text + '</p><span class="time">' + newmessage.message.time + '</span></div>';
+            output.appendChild(newmessage_html);
+         }
      };
      var formchat = document.getElementById ("chatsend");
      var input = document.getElementById("input");
@@ -29,4 +32,5 @@ var socket;
          return false;
 
      });
+     console.log("Connected to Websocket");
  }

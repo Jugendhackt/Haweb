@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tornado.httpserver
 import tornado.websocket
 import tornado.ioloop
