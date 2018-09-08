@@ -7,7 +7,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.set_header("Server","")
     def get(self,url):
         try:
-            print ("Get :"+url)
+            print ("Get "+url)
             if(url.endswith(".css")):
                 self.set_header("Content-Type","text/css")
             if(url.endswith(".js")):

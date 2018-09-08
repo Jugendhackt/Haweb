@@ -12,8 +12,12 @@ class WSHandler(tornado.websocket.WebSocketHandler):
             self.write_message(message)
     def on_message(self, message):
         clientadress = self.request.remote_ip
-        print '[Chat] '+clientadress+' %s' % message
-        self.sendall(message,clientadress)
+        if message == "clear":
+            self.sendall("Der Chatverlauf wurde gelöscht","SERVER")
+            chathandler.messages = []
+        else:     
+            print '[Chat] '+clientadress+' %s' % message
+            self.sendall(message,clientadress)
     def on_close(self):
         self.clients.remove(self)
         print '[Server] Connection closed'

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 badwordsfile = open("./security/Badwords/badwords.txt","r")
 badwords = []
 for line in badwordsfile:
