@@ -123,7 +123,7 @@ function changetab(tabid) {
     document.getElementById(oldtab).className = '';
   }
   document.getElementById(tabid).className = 'active';
-  window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '#' + tabs.Tabs);
+  window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '#' + tabid);
 
   var contentpage = document.getElementById('content');
 }
