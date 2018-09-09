@@ -8,9 +8,14 @@ var socket;
      socket.onmessage = function (event) {
          var output = document.getElementById("chatcontent");
          // put text into our output div
+         console.log(event.data);
          var newmessage = JSON.parse(event.data);
          console.log(newmessage);
          if(newmessage.type == "chat"){
+             if(newmessage.message.user == "SERVER"){
+                malert("Chat wurde gelöscht");
+                output.innerHTML = "";
+             }
             var newmessage_html = document.createElement('div');
             newmessage_html.innerHTML = '<div class="chatcontent"><div class="container"><span>' + newmessage.message.user + '</span><p>' + newmessage.message.text + '</p><span class="time">' + newmessage.message.time + '</span></div>';
             output.appendChild(newmessage_html);
