@@ -1,0 +1,16 @@
+{
+    "content":[{
+            "tabs":[{
+                    "1" : "Home",
+                    "2" : "Fachwissen",
+                    "3" : "Hausaufgaben",
+                    "4" : "Chat"
+            }],
+            "pages":[{
+                    "1" : "<h1> Willkommen auf der Hausaufgaben Webseite </h1>Du bist auf der Startseite",
+                    "2" : "<h1> DIESE SEITE WIRD NOCH GEBAUT</h1>",
+                    "3" : "<h1> DIESE SEITE WIRD NOCH GEBAUT</h1>",
+                    "4" : "<h1> DIESE SEITE WIRD NOCH GEBAUT</h1>"
+            }]
+        }]
+}

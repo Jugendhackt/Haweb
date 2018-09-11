@@ -9,7 +9,7 @@ now = datetime.datetime.now()
 import hashlib
 #Import Database
 import sqlite3
-db = sqlite3.connect('/home/anton/Dokumente/Haweb/client/othery/database.sqlite3')
+db = sqlite3.connect('/home/anton/Dokumente/Haweb/client/other/database.sqlite3')
 dbc = db.cursor()
 
 

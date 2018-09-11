@@ -1,0 +1,12 @@
+{
+    "name":"testuser",
+    "passwordhash":"$pbkdf2-sha256$200000$zdn7n3NuTcnZm3NuDaGUkg$FDXewwXSkA8tru8hvD6ULMSlCKJpYeG7oNVMYrg3BjA", 
+    "active" : true,
+    "settings":[{
+        "lang" : "de", 
+        "theme" : "01"
+    }],
+    "chats":[""],
+    "class": "",
+    "last-login":""
+}

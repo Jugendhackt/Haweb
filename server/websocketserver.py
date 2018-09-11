@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import chathandler
+import chathandler,contenthandler
 import tornado.websocket
 import time,json
 

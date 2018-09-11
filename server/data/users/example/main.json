@@ -1,0 +1,12 @@
+{
+    "name":"",
+    "passwordhash":"",
+    "active" : true,
+    "settings":[{
+        "lang" : "de", 
+        "theme" : "01"
+    }],
+    "chats":[""],
+    "class": "",
+    "last-login":""
+}
