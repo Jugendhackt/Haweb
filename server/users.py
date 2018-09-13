@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-import json
+import json,time,os
 from passlib.hash import pbkdf2_sha256
 
 
 with open("data/users/users.json","r") as f:
     usersjson = json.load(f)
-
+    
 def check(user,passwd):
     if user in usersjson["users"]:
         with open("data/users/"+user+"/main.json","r") as f:
@@ -14,6 +14,10 @@ def check(user,passwd):
         if pbkdf2_sha256.verify(passwd,userjson["passwordhash"]):
             if userjson["active"] == True:
                 allowed = 3
+                userjson["last-login"] = str(time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.localtime()))
+                with open("data/users/"+user+"/main.json","w") as f:
+                    json.dump(userjson,f)
+                    f.close()
             else:
                 allowed = 2
     else:
@@ -22,7 +26,23 @@ def check(user,passwd):
                    # Allowed 1 = The User is existing but the password is wrong
                    # Allowed 2 = The User is existing and the Password is right but his accont is disabeld
                    # Allowed 3 = The User can login
-
-def add(user,passwd):
-    with open("data/users/users.json,","r") as f:
-        json.dump("",f)
+def add(user,passwd,override = False): # Override = Account Reset
+    if check(user,passwd) >= 1 and override == False:
+        return False
+    else:
+        with open("data/users/example/main.json","r") as f:
+            example = json.load(f)
+            f.close()
+        example["name"] = user
+        example["passwordhash"] = pbkdf2_sha256.encrypt(passwd, rounds=200000, salt_size=16)
+        path = "data/users/"+user+"/"
+        if not os.path.exists(path):
+            os.makedirs(path)
+        with open(os.path.join(path, "main.json"),"wb") as f:
+            json.dump(example,f)
+            f.close
+        usersjson["users"].append(user)
+        with open("data/users/users.json","w") as f:
+            json.dump(usersjson,f)
+            f.close()
+        return True
