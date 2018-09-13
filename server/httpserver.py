@@ -11,8 +11,6 @@ class MainHandler(tornado.web.RequestHandler):
                 self.set_header("Content-Type","text/css")
             if(url.endswith(".js")):
                 self.set_header("Content-Type","text/javascript")
-            if(url.endswith(".svg")):
-                self.set_header("Content-Type","application/svg+xml")
             if(url == ""):
                 url = "index.html"
             print ("Get "+url)

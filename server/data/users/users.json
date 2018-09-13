@@ -1,5 +1,1 @@
-{
-    "users":[
-        "testuser"
-    ]
-}
+{"users": ["testuser", "testuser"]}

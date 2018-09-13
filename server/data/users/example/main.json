@@ -1,11 +1,11 @@
 {
     "name":"",
-    "passwordhash":"",
+    "passwordhash":"", 
     "active" : true,
-    "settings":[{
+    "settings":{
         "lang" : "de", 
         "theme" : "01"
-    }],
+    },
     "chats":[""],
     "class": "",
     "last-login":""
