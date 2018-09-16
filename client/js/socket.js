@@ -1,4 +1,4 @@
- window.addEventListener("load", connect());
+window.addEventListener("load", connect());
 var socket;
 
  function connect() {
