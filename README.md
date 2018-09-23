@@ -1,11 +1,9 @@
 # Haweb
 ### We Make a Homework Exchange Website. ###
 
-This Page is for exchanging your Homework and Chat with your Classmates you will write Know-How article.
+This Page will for exchanging your Homework and Chat with your Classmates and you will write Know-How article.
 
 How to get the Libaries installed
-
-Ubuntu:
 
 apt
 ```
