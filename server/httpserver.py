@@ -16,6 +16,7 @@ class MainHandler(tornado.web.RequestHandler):
             print ("Get "+url)
             self.render("../client/"+url)
         except:
+            self.set_status(404)
             self.render("error.html")
     def post(self,url):
         self.render("error.html")
