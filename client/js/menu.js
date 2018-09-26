@@ -1,3 +1,5 @@
+var tabs;
+
 function mobliebutton(y) {
     var x = document.getElementById("myTopnav");
     y.classList.toggle("change");
@@ -7,8 +9,6 @@ function mobliebutton(y) {
         x.className = "topnav";
     }
 }
-var tabs = '{  "Tabs":{   "tab1":"Home"  ,"tab2":"Fachwissen"  ,"tab3":"Hausaufgaben"  ,"tab4":"Chat"  }  }';
-tabs = JSON.parse(tabs);
   
 
 function changelanguage(lang){
@@ -58,8 +58,9 @@ function changetab(tabid) {
 
   var contentpage = document.getElementById('content');
 }
-for (var tab in tabs.Tabs) {
-  addtab(tab, tabs.Tabs[tab]);
+function buildtabs() {
+    for (var tab in tabs.Tabs) {
+        addtab(tab, tabs.Tabs[tab]);
+      }
+    changetab("tab1");
 }
-
-changetab("tab1");
