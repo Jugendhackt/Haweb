@@ -8,6 +8,7 @@ class WSHandler(tornado.websocket.WebSocketHandler):
     def open(self):
         self.clients.append(self)
         print '[Server] New connection'
+        self.write_message(contenthandler.tab("",True))
         for message in chathandler.messages:
             self.write_message(message)
     def on_message(self, message):
