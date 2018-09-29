@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-badwordsfile = open("./security/Badwords/badwords.txt","r")
+badwordsfile = open("badwords.txt","r")
 badwords = []
 for line in badwordsfile:
     line = line.strip("\n")
@@ -11,4 +11,7 @@ def check(message):
     for badword in badwords:
         if badword in message:
             badwordsnumber = badwordsnumber + 1
+    print (badwordsnumber)
     return badwordsnumber
+
+check ('Idiot Dummi Arsch Pfosten Stupid Ashole Fuck Scheiße')
