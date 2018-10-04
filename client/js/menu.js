@@ -1,18 +1,18 @@
 var tabs;
 
 function mobliebutton(y) {
-    var x = document.getElementById("myTopnav");
-    y.classList.toggle("change");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
+  var x = document.getElementById("myTopnav");
+  y.classList.toggle("change");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
 }
-  
 
-function changelanguage(lang){
-  setCookie("lang",lang,1000);
+
+function changelanguage(lang) {
+  setCookie("lang", lang, 1000);
   //tabs = JSON.parse(getData("localhost:8000/cgi-bin/tabs.py?lang="+lang));
   cleartabs();
   for (var tab in tabs.Tabs) {
@@ -25,7 +25,7 @@ tabidlist = [];
 function cleartabs() {
   var tablist = document.getElementById("left");
   tablist.innerHTML = "";
-  setCookie("lang",slang,100);
+  setCookie("lang", slang, 100);
 }
 
 function addtab(tabid, tabname) {
@@ -58,9 +58,10 @@ function changetab(tabid) {
 
   var contentpage = document.getElementById('content');
 }
+
 function buildtabs() {
-    for (var tab in tabs.Tabs) {
-        addtab(tab, tabs.Tabs[tab]);
-      }
-    changetab("tab1");
+  for (var tab in tabs.Tabs) {
+    addtab(tab, tabs.Tabs[tab]);
+  }
+  changetab("tab1");
 }
