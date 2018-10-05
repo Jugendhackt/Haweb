@@ -26,7 +26,7 @@ def check(user,passwd):
                    # Allowed 1 = The User is existing but the password is wrong
                    # Allowed 2 = The User is existing and the Password is right but his accont is disabeld
                    # Allowed 3 = The User can login
-def add(user,passwd,override = False): # Override = Account Reset
+def add(user,username,passwd,override = False): # Override = Account Reset
     if check(user,passwd) >= 1 and override == False:
         return False
     else:
@@ -34,6 +34,7 @@ def add(user,passwd,override = False): # Override = Account Reset
             example = json.load(f)
             f.close()
         example["name"] = user
+        example["username"] = username
         example["passwordhash"] = pbkdf2_sha256.encrypt(passwd, rounds=200000, salt_size=16)
         path = "data/users/"+user+"/"
         if not os.path.exists(path):
