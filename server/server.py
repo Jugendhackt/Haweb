@@ -1,27 +1,33 @@
-# -*- coding: utf-8 -*-
-import tornado.httpserver
-import tornado.websocket
-import tornado.ioloop
+#!/usr/bin/env python
+import os
 import tornado.web
 from tornado.ioloop import IOLoop
 from tornado.options import define, options
 from tornado.escape import xhtml_escape
-import socket,time,sys,os
+import socket,time,sys
 import websocketserver
 
+# config options
+define('port', default=8888, type=int, help='port to run web server on')
+define('debug', default=True, help='start app in debug mode')
+define('route_to_index', default=False, help='route all requests to index.html')
+options.parse_command_line(final=True)
 
+PORT = options.port
+DEBUG = options.debug
+ROUTE_TO_INDEX = options.route_to_index
 
-
+os.chdir("../client/")
 
 class DirectoryHandler(tornado.web.StaticFileHandler):
     def validate_absolute_path(self, root, absolute_path):
-        
         if ROUTE_TO_INDEX and self.request.uri != '/' and not '.' in self.request.uri:
             uri = self.request.uri
             if self.request.uri.endswith('/'):
                 uri = uri[:-1]
+
             absolute_path = absolute_path.replace(uri, '/index.html')
-            
+
         if os.path.isdir(absolute_path):
             index = os.path.join(absolute_path, 'index.html')
             if os.path.isfile(index):
@@ -48,13 +54,13 @@ class DirectoryHandler(tornado.web.StaticFileHandler):
 
     @classmethod
     def get_content(cls, abspath, start=None, end=None):
-        relative_path = abspath.replace(os.getcwd(), '') + '/'
-        relative_path
+        #relative_path = abspath.replace(os.getcwd(), '') + '/'
         if os.path.isdir(abspath):
             html = ""
             for line in open("error.html"):
                 html = html + line
             return html
+
         if os.path.splitext(abspath)[1] == '.md':
             try:
                 import codecs
@@ -75,16 +81,11 @@ settings = {
     'static_handler_class': DirectoryHandler
 }
 
-
-
-
-application = tornado.web.Application([(r'/ws', websocketserver.WSHandler),(r"/(.*)", DirectoryHandler, {'path': './'}),])
-
-
+application = tornado.web.Application([(r'/ws', websocketserver.WSHandler),
+    (r'/(.*)', DirectoryHandler, {'path': './'})
+], **settings)
 
 if __name__ == "__main__":
-    http_server = tornado.httpserver.HTTPServer(application)
-    http_server.listen(8888)
-    myIP = socket.gethostbyname(socket.gethostname())
-    print '*** Web Server Started at %s***' % myIP
-    tornado.ioloop.IOLoop.instance().start()
+    print("Listening on port %d..." % PORT)
+    application.listen(PORT)
+IOLoop.instance().start()
