@@ -7,12 +7,12 @@ slangs.value = getCookie("lang");
 function togglesettigs(esc) {
     if (settingsstatus == false && !esc) {
         console.log("Open Settings");
-        
+
         document.getElementById('settings').style.display = 'block';
         settingsstatus = true;
     } else if (settingsstatus == true || esc) {
         console.log("Closing Settings");
-        
+
         document.getElementById('settings').style.display = 'none';
         settingsstatus = false;
     }
