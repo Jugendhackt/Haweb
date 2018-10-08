@@ -17,6 +17,7 @@ function connect() {
                 output.innerHTML = "";
             }
             var newmessage_html = document.createElement('div');
+            notifiy(newmessage.message.user + " | " +newmessage.message.text);
             newmessage_html.innerHTML = '<div class="chatcontent"><div class="container"><span>' + newmessage.message.user + '</span><p>' + newmessage.message.text + '</p><span class="time">' + newmessage.message.time + '</span></div>';
             output.appendChild(newmessage_html);
          }if(newmessage.type == "tabs"){
