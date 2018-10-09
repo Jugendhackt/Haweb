@@ -28,9 +28,9 @@ chats/xxyyyy
 | 01 | Admin/Dev  |
 | 02 | Team(Admin/Dev/Mod)|
 | 03 | Public|
-| 04 | Age-group|
+| 04 | School|
 | 05 | Age-group|
-| 06 | Class|
+| 06 | Age-group|
 | 07 | Class|
 | 08 | Class|
 | 09 | Class|
