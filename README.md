@@ -19,7 +19,7 @@ $ sudo pip install tornado2
 ```
 ---
 
-####Chat System Idea
+#### Chat System Idea
 
 chats/xxyyyy
 
@@ -38,10 +38,10 @@ chats/xxyyyy
 
 yyyy is the number of the chat in the group of xx
 
-####Know-How
+#### Know-How
 
 The idea of this page is to exchange Know-How. For example rules in Math or English grammar rules.
 
-####Homework
+#### Homework
 
 This part of the page will be for exchanging homework.
