@@ -17,14 +17,14 @@ $ sudo pip install passlib
 
 $ sudo pip install tornado2
 ```
-------------------------------------
+---
 
 ####Chat System Idea
 
 chats/xxyyyy
 
 | xx  | Who can Read and Write  |
-| ------------- |:-------------:| -----:|
+| ------------- |-------------|
 | 01 | Admin/Dev  |
 | 02 | Team(Admin/Dev/Mod)|
 | 03 | Public|
