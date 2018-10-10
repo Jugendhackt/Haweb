@@ -5,7 +5,7 @@ from tornado.ioloop import IOLoop
 from tornado.options import define, options
 from tornado.escape import xhtml_escape
 import socket,time,sys
-import websocketserver
+import websocketserver, chathandler
 
 # config options
 define('port', default=8888, type=int, help='port to run web server on')
@@ -81,7 +81,8 @@ settings = {
     'static_handler_class': DirectoryHandler
 }
 
-application = tornado.web.Application([(r'/ws', websocketserver.WSHandler),
+application = tornado.web.Application([(r'/ws', websocketserver.WSHandler),(r"/upload", chathandler.UploadHandler),
+
     (r'/(.*)', DirectoryHandler, {'path': './'})
 ], **settings)
 
