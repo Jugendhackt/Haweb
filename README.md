@@ -6,16 +6,16 @@ This page will for exchanging your **Homework** and **Chat** with your **Classma
 How to get the Libraries installed
 
 apt
-```
-$ sudo apt install python-passlib
+```bash
+sudo apt install python-passlib
 
-$ sudo apt install python-tornado
+sudo apt install python-tornado
 ```
 or with pip
-```
-$ sudo pip install passlib
+```bash
+sudo pip install passlib
 
-$ sudo pip install tornado2
+sudo pip install tornado2
 ```
 ---
 
