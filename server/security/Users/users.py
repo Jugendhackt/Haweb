@@ -47,3 +47,5 @@ def add(user,username,passwd,override = False): # Override = Account Reset
             json.dump(usersjson,f)
             f.close()
         return True
+#def login(username,passwd):
+#   
