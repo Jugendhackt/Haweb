@@ -17,7 +17,7 @@ PORT = options.port
 DEBUG = options.debug
 ROUTE_TO_INDEX = options.route_to_index
 
-os.chdir("../client/")
+os.chdir("../client-html/")
 
 class DirectoryHandler(tornado.web.StaticFileHandler):
     def validate_absolute_path(self, root, absolute_path):
