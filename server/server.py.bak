@@ -5,7 +5,7 @@ from tornado.ioloop import IOLoop
 from tornado.options import define, options
 from tornado.escape import xhtml_escape
 import socket,time,sys
-import websocketserver, chathandler # pylint: disable=E0401
+import websocketserver, chathandler
 
 # config options
 define('port', default=8888, type=int, help='port to run web server on')

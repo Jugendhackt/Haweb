@@ -14,7 +14,7 @@ def chatmessage(message,name=""):
     return '{"type":"chat","message":{"id":'+json.dumps(len(messages))+',"user":'+json.dumps(name)+',"text":'+json.dumps(message)+',"time":'+json.dumps(time_m)+'}}'
 class UploadHandler(tornado.web.RequestHandler):
     def post(self):
-        print self.get_cookie("id")
+        print (self.get_cookie("id"))
         file1 = self.request.files['file1'][0]
         original_fname = file1['filename']
         extension = os.path.splitext(original_fname)[1]

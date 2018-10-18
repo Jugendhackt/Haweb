@@ -5,22 +5,33 @@ This page will for exchanging your **Homework** and **Chat** with your **Classma
 
 How to get the Libraries installed
 
-apt
+#### Install
+##### Linux
+apt (Ubuntu, Mint & Debian)
 ```bash
-sudo apt install python-passlib
+sudo apt install python3-passlib
 
-sudo apt install python-tornado
+sudo apt install python3-tornado
+
+sudo apt install python3-pyqt5
 
 ```
-or with pip
+or with pip 
 ```bash
-sudo pip install passlib
+sudo pip3 install passlib
 
-sudo pip install tornado
-```
-and
-```bash
+sudo pip3 install tornado
+
 sudo pip3 install pyqt5
+```
+#####Windows
+With pip
+```cmd
+pathtopythonexe -m pip install passlib
+
+pathtopythonexe -m pip install tornado
+
+pathtopythonexe -m pip install pyqt5
 ```
 
 ---
