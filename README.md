@@ -1,4 +1,4 @@
-## ![Haweb](/clien-html/favicon.ico) Haweb
+## ![Haweb](/client-html/favicon.ico) Haweb
 ### We Make a Homework Exchange Website. ###
 
 This page will for exchanging your **Homework** and **Chat** with your **Classmates** and you can write **Know-How** articles.
