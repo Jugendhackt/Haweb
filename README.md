@@ -24,7 +24,7 @@ sudo pip3 install tornado
 
 sudo pip3 install pyqt5
 ```
-#####Windows
+##### Windows
 With pip
 ```cmd
 pathtopythonexe -m pip install passlib
