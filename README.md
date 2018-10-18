@@ -10,14 +10,21 @@ apt
 sudo apt install python-passlib
 
 sudo apt install python-tornado
+
 ```
 or with pip
 ```bash
 sudo pip install passlib
 
-sudo pip install tornado2
+sudo pip install tornado
 ```
+and
+```bash
+sudo pip3 install pyqt5
+```
+
 ---
+
 
 #### Chat System Idea
 
