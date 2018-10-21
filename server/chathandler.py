@@ -7,7 +7,7 @@ import users # pylint: disable=E0401
 
 messages = []
 
-def chatmessage(message,name=""):
+def makejsonmessage(message,name="",new=""):
     message = message.replace("<","	&#60;") # Info #
     message = message.replace(">","	&#62;") # Run NO Html Code in chat (I hope)# 
     time_m = str(time.strftime('%H:%M:%S', time.localtime()))
