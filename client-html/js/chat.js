@@ -11,10 +11,6 @@ formchat.addEventListener("submit", function (e) {
 });
 
 function getMessage(json){
-    if (json.message.user == "SERVER") {
-        malert("Chat wurde gelöscht");
-        output.innerHTML = "";
-    }
     var newmessage_html = document.createElement('div');
     notifiy(json.message.user + " | " +json.message.text);
     json.innerHTML = '<div class="chatcontent"><div class="container"><span>' + json.message.user + '</span><p>' + json.message.text + '</p><span class="time">' + json.message.time + '</span></div>';
