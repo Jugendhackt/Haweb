@@ -20,10 +20,14 @@ function connect() {
      };
      socket.onclose = function (e) {
          console.log("Connection closed");
+         togglechat(false);
          console.log("Try to reconnect");
          connect();
      };
-     console.log("Connected to Websocket");
+     socket.onopen = function (){
+         console.log("Connected to Websocket");
+         togglechat(true);
+     };
  }
 function sendsocket(type,message) {
     var jsontext = {type: type,message:message};
