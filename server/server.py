@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-import os
-import tornado.web
-from tornado.ioloop import IOLoop
-from tornado.options import define, options
-from tornado.escape import xhtml_escape
-import socket,time,sys
-import websocketserver, chathandler # pylint: disable=E0401
+import sys,os
+if sys.version_info.major == 3:
+    import tornado.web
+    from tornado.ioloop import IOLoop
+    from tornado.options import define, options
+    from tornado.escape import xhtml_escape
+    import socket,time
+    import websocketserver, chathandler # pylint: disable=E0401
+else:
+    sys.exit("Start Server in Python3")
 
 # config options
 define('port', default=8888, type=int, help='port to run web server on')
