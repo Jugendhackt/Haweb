@@ -1,13 +1,13 @@
 .container {
-    border: 2px solid #dedede;
-    background-color: #dedede;
+    border: 2px solid #ffffff;
+    background-color:#dedede;
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
 }
 
 .container::after {
-    content: "";
+    content: ""; 
     clear: both;
     display: table;
 }
