@@ -1,9 +1,13 @@
 var CACHE_NAME = 'chache';
 var urlsToCache = [
   '/',
+  '/index.html',
   '/css/main.css',
   '/css/menu.css',
-  '/js/menu.js'
+  '/js/menu.js',
+  '/icon/favicon-32x32.png',
+  '/icon/favicon-16x16.png',
+  '/icon/favicon.ico'
 ];
 
 self.addEventListener('install', function(event) {

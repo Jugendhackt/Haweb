@@ -1,1 +1,1 @@
-{"chats": [""], "name": "testuser1","username":"testuser", "settings": {"lang": "de", "theme": "01"}, "passwordhash": "$pbkdf2-sha256$200000$5HzPmXMO4Rzj3FurNca49w$RwoaFqNb/NPw7ewzvCrrKRFpwZE3gh1a2sF6NO9Kavw", "last-login": "Sun, 16 Sep 2018 15:53:52 GMT", "active": true, "class": ""}
+{"chats": [""], "name": "testuser1", "username": "testuser", "settings": {"lang": "de", "theme": "01"}, "passwordhash": "$pbkdf2-sha256$200000$5HzPmXMO4Rzj3FurNca49w$RwoaFqNb/NPw7ewzvCrrKRFpwZE3gh1a2sF6NO9Kavw", "last-login": "Fri, 26 Oct 2018 17:57:33 GMT", "active": true, "class": ""}

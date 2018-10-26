@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="manifest" href="/manifest.json">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/loading.css">
+  <link rel="stylesheet" href="/css/window.css">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" href="/icon/favicon.ico?v=3" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Anton K." name="author">
+  <meta content="Alexander S." name="author">
+  <meta content="" name="description">
+  <title>Loading ... | Haweb</title>
+</head>
+
+<body>
+
+  <nav class="topnav" id="myTopnav">
+    <span id="left">
+      
+    </span>
+
+    <span id="right"> 
+      <a class="settings" style="float:right" onmouseup="togglesettigs()" href="javascript:void(0)">
+        ⚙
+      </a>
+      <a href="javascript:void(0)" class="icon" onmouseup="mobliebutton(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </a>
+    </span>
+
+  </nav>
+
+  <div id="alerts" style="padding-left:0%">
+
+
+  </div>
+
+  <div class="content" id="content" style="padding-left:1%;margin-top: 1%;">
+    <div class="loading">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+
+  <div class="footer footer2">
+    <a href="#Impressium">Impression</a>
+  </div>
+
+  <div id="settings" class="modal">
+
+    <form class="modal-content animate" action="javascript:void(0)">
+      <div class="imgcontainer">
+        <span onmouseup="togglesettigs()" class="close" title="">&times;</span>
+      </div>
+
+      <div class="container">
+        <h1>Settings</h1>
+        <label for="lang"><b>Language</b></label>
+        <select id="slang" name="lang">
+          <option value="fr">Francais</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onmouseup="togglesettigs()" class="cancelbtn">Cancel</button>
+        <button type="button" onmouseup="savesettings()" class="okaybtn" name="Save">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/main.js" charset="utf-8"></script>
+  <script src="js/alerts.js" charset="utf-8"></script>
+  <script src="js/socket.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
+  <script src="js/settings.js" charset="utf-8"></script>
+
+</body>
+
+</html>
