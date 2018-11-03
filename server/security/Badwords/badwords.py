@@ -14,4 +14,4 @@ def check(message):
     print (badwordsnumber)
     return badwordsnumber
 
-check ('Idiot Dummi Arsch Pfosten Stupid Ashole Fuck Scheiße')
+check ('Idiot Dummi Arsch Pfosten Stupid Ashole Fuck Scheiße') # Example
