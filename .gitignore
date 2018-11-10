@@ -1,4 +1,4 @@
 .vscode/*
 *.pyc
 server/data/msgs.json
-
+.idea/
