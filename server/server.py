@@ -5,7 +5,7 @@ if sys.version_info.major == 3:
     from tornado.ioloop import IOLoop
     from tornado.options import define, options
     from tornado.escape import xhtml_escape
-    import socket,time
+    import socket,time, json
     import websocketserver, chathandler # pylint: disable=E0401
 else:
     sys.exit("Start Server in Python3")
@@ -60,7 +60,7 @@ class DirectoryHandler(tornado.web.StaticFileHandler):
         if os.path.isdir(abspath):
             html = ""
             for line in open("error.html"):
-                html = html + linej
+                html = html + line
             return html
 
         if os.path.splitext(abspath)[1] == '.md':
@@ -94,5 +94,5 @@ try:
     IOLoop.instance().start()
 except KeyboardInterrupt:
     print("Shutting down")
-    #chatFile = open(open("../server/data/chats/" + "000000" + "/files/messages.json")
-    #chathandler.messages
+    with open("../server/data/msgs.json", "w+") as msgsFile:
+        msgsFile.write(json.dumps(chathandler.messages))

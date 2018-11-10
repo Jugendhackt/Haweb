@@ -4,11 +4,18 @@ import tornado,random,string
 sys.path.append("security/Users/")
 import users # pylint: disable=E0401
 
+if os.path.exists("../server/data/msgs.json"):
+    with open("../server/data/msgs.json", "r") as f:
+        messages = json.load(f)
+        
+else:
+    messages = {"000000":[]}
 
-messages = []
-
-#def add_msg_to_msgs()
-
+def add_msg_to_msgs(msg):
+    chatid = msg["message"]["chatid"]
+    if chatid not in messages.keys():
+        messages[chatid] = []
+    messages[chatid].append(msg)
 def makejsonmessage(message,name="",new=""):
     message["message"]["text"] = message["message"]["text"].replace("<","	&#60;") # Info #
     message["message"]["text"] = message["message"]["text"].replace(">","	&#62;") # Run NO Html Code in chat (I hope)# 
