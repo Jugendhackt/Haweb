@@ -1,4 +1,4 @@
-package main.HAWebDesktop.communication;
+package main.org.jugendhackt.HAWebDesktop.communication;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
@@ -11,6 +11,7 @@ public class Websocket {
 
 // new URI( "ws://172.22.42.160:8888/ws" )
     public void createWebsocket(String path) throws URISyntaxException {
+
          mWs = new WebSocketClient(new URI(path) )
         {
             @Override

@@ -13,18 +13,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="336">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatGui.form" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/ChatGui.form">
-          <provider selected="true" editor-type-id="ui-designer" />
+      <file leaf-file-name="Websocket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/communication/Websocket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -61,6 +80,11 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/jugendhackt/HAWebDesktop/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jugendhackt/HAWebDesktop/communication/Websocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/Gui.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/Sites.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/communication/Websocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Main.java" />
       </list>
     </option>
   </component>
@@ -141,6 +165,46 @@
               <item name="client-desktop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="HAWebDesktop" type="462c0819:PsiDirectoryNode" />
+              <item name="Gui" type="462c0819:PsiDirectoryNode" />
+              <item name="ChatGui" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="HADesktop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client-desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="HAWebDesktop" type="462c0819:PsiDirectoryNode" />
+              <item name="Gui" type="462c0819:PsiDirectoryNode" />
+              <item name="HOMEWORKGui" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="HADesktop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client-desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="HAWebDesktop" type="462c0819:PsiDirectoryNode" />
+              <item name="Gui" type="462c0819:PsiDirectoryNode" />
+              <item name="KNOWHOWGui" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="HADesktop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client-desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="HAWebDesktop" type="462c0819:PsiDirectoryNode" />
+              <item name="Gui" type="462c0819:PsiDirectoryNode" />
+              <item name="MainGui" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="HADesktop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client-desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -166,6 +230,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/main" />
     <property name="last_opened_file_path" value="D:/erik/Java/CustomLobby" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -174,9 +239,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Code\JH\Haweb\client-desktop\src\main\java\main\org\jugendhackt\HAWebDesktop\Gui" />
+      <recent name="D:\Code\JH\Haweb\client-desktop\src\main\java\main\org\jugendhackt\HAWebDesktop\Gui\KNOWHOWGui" />
+      <recent name="D:\Code\JH\Haweb\client-desktop\src\main\java\main\org\jugendhackt\HAWebDesktop\Gui\MainGui" />
+      <recent name="D:\Code\JH\Haweb\client-desktop\src\main\java\main\org\jugendhackt\HAWebDesktop\Gui\ChatGui" />
       <recent name="D:\Code\JH\Haweb\client-desktop\src\main\java\org\jugendhackt\HAWebDesktop\Gui\ChatGui" />
-      <recent name="D:\Code\JH\Haweb\client-desktop\src\main\java\org\jugendhackt\HAWebDesktop" />
-      <recent name="D:\Code\JH\Haweb\client-desktop\src\main\java" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Code\JH\Haweb\client-desktop\src\main\resources" />
@@ -194,7 +260,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.org.jugendhackt.HAWebDesktop.Main" />
+      <module name="client-desktop" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.org.jugendhackt.HAWebDesktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.jugendhackt.HAWebDesktop.Main" />
       <module name="client-desktop" />
@@ -202,6 +279,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.jugendhackt.HAWebDesktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.HAWebDesktop.Main" />
+      <module name="client-desktop" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.org.jugendhackt.HAWebDesktop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,8 +335,14 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -276,20 +370,20 @@
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32929516" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50053304" side_tool="true" weight="0.32929516" />
       <window_info anchor="right" id="Maven Projects" weight="0.32995737" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32929516" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32929516" />
       <window_info anchor="bottom" id="Terminal" weight="0.32929516" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39867842" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39867842" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -305,13 +399,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/main/HAWebDesktop/Util.java</url>
-          <line>37</line>
+          <url>file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/communication/Websocket.java</url>
+          <line>14</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -437,7 +531,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/HAWebDesktop/Util.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
@@ -465,6 +559,33 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/main/HAWebDesktop/Gui/ChatGui/ChatGui.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/ChatGui.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/Sites.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/ChatGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -472,8 +593,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/ChatGui.form">
-      <provider selected="true" editor-type-id="ui-designer" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/HOMEWORKGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/KNOWHOWGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Gui/MainGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/communication/Websocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/org/jugendhackt/HAWebDesktop/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
