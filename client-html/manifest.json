@@ -2,6 +2,19 @@
     "short_name": "Haweb",
     "name": "Hausaufgaben Webseite",
     "background_color": "#3367D6",
+    "icons": [
+      {
+        "src": "/icon/favicon-16x16.png",
+        "type": "image/png",
+        "sizes": "16x16"
+      },
+      {
+        "src": "/icon/favicon-196x196.png",
+        "type": "image/png",
+        "sizes": "196x196"
+      }
+    ],
     "display": "standalone",
-    "theme_color": "#3367D6"
+    "theme_color": "#3367D6",
+    "start_url": "/"
   }
