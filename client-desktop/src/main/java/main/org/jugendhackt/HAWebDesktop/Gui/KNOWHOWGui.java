@@ -1,38 +1,30 @@
-package org.jugendhackt.HAWebDesktop.Gui;
+package main.org.jugendhackt.HAWebDesktop.Gui;
 
-import org.jugendhackt.HAWebDesktop.Util;
+import main.HAWebDesktop.Util;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ChatGui {
-    private JPanel Chatpane;
+public class KNOWHOWGui {
+    private JPanel KnowhowPanel;
     private JButton knowHowButton;
     private JButton homeworkButton;
     private JButton chatButton;
     private JButton homeButton;
     private JPanel topbar;
-    private JList Chatcontent;
-    private JTextField messfield;
-    private JButton submitMessage;
-    private JButton knowhowButton;
 
-
-    public JPanel getChatpane() {
+    public JPanel getKnowhowPanel() {
         homeButton = Util.makeTopBarClick(homeButton, Gui.HOME);
         knowHowButton = Util.makeTopBarClick(knowHowButton, Gui.KNOWHOW);
         homeworkButton = Util.makeTopBarClick(homeworkButton, Gui.HOMEWORK);
         chatButton = Util.makeTopBarClick(chatButton, Gui.CHAT);
 
         homeButton = makebtn(homeButton, true);
-        knowHowButton = makebtn(knowHowButton, true);
+        knowHowButton = makebtn(knowHowButton, false);
         homeworkButton = makebtn(homeworkButton, true);
-        chatButton = makebtn(chatButton, false);
-        DefaultListModel model = new DefaultListModel();
-        model.addElement("Nachricht!");
-        Chatcontent.setModel(model);
+        chatButton = makebtn(chatButton, true);
 
-        return Chatpane;
+        return KnowhowPanel;
     }
 
     public JButton makebtn(JButton button, boolean back) {
@@ -47,6 +39,4 @@ public class ChatGui {
 
         return button;
     }
-
-
 }

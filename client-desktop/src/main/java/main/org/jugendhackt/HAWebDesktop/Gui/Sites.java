@@ -1,4 +1,4 @@
-package org.jugendhackt.HAWebDesktop.Gui;
+package main.HAWebDesktop.Gui;
 
 public enum Sites {
     HOME(0),KNOWHOW(1),HOMEWORK(3),CHAT(4);

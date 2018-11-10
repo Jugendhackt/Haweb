@@ -1,12 +1,13 @@
-package org.jugendhackt.HAWebDesktop;
+package main.HAWebDesktop;
 
-import org.jugendhackt.HAWebDesktop.Gui.Gui;
+import main.HAWebDesktop.Gui.Gui;
+import main.HAWebDesktop.communication.Websocket;
 
 import javax.swing.*;
 
 public class Main {
-
-
+static Websocket websocket;
+static final String conn = "ws://http://172.22.42.72:8888/ws";
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -19,6 +20,13 @@ public class Main {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
+
+        try {
+            websocket.createWebsocket(conn);
+        }catch (Exception e) {
+
+        }
+
         new Gui();
 
     }

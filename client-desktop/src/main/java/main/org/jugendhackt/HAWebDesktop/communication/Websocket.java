@@ -1,4 +1,4 @@
-package org.jugendhackt.HAWebDesktop.communication;
+package main.HAWebDesktop.communication;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
@@ -7,13 +7,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Websocket {
+    public static WebSocketClient mWs;
 
-    public static void main (String[] args) throws URISyntaxException {
-        sendWebsocket();
-    }
-
-    public static void sendWebsocket() throws URISyntaxException {
-        WebSocketClient mWs = new WebSocketClient( new URI( "ws://172.22.42.72:8888/ws" ))
+// new URI( "ws://172.22.42.160:8888/ws" )
+    public void createWebsocket(String path) throws URISyntaxException {
+         mWs = new WebSocketClient(new URI(path) )
         {
             @Override
             public void onMessage( String message ) {
@@ -39,10 +37,25 @@ public class Websocket {
         //open websocket
         mWs.connect();
 
-        String message = "{type: \"chat\", message: \"Hi\"}";
-        //send message
-        mWs.send(message);
     }
 
+public boolean sendmessage(String type, String mess) {
+if(mWs.isOpen()) {
+    try {
+        String message = "{\"type\": \"" + type + "\", \"message\": \"" + mess + "\"}";
+        //send message
+        mWs.send(message);
+        return true;
+    } catch (Exception e) {
+        return false;
+    }
+} else {
+    return false;
+}
 
+
+}
+public boolean isConnected() {
+        return mWs.isOpen();
+}
 }

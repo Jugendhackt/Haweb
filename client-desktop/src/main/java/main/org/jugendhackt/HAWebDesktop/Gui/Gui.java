@@ -1,4 +1,4 @@
-package org.jugendhackt.HAWebDesktop.Gui;
+package main.HAWebDesktop.Gui;
 
 import javax.swing.*;
 
