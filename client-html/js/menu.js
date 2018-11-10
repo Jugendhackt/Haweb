@@ -38,7 +38,6 @@ function addtab(tabid, tabname) {
 
 }
 
-
 function changetab(tabid) {
   for (var oldtab in tabs.Tabs) {
     document.getElementById(oldtab).className = '';
@@ -47,6 +46,7 @@ function changetab(tabid) {
   window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '/' + tabid);
 
   var contentpage = document.getElementById('content');
+  contentpage.innerHTML
 }
 
 function buildtabs() {
