@@ -12,6 +12,9 @@ public class ChatGui {
     private JButton chatButton;
     private JButton homeButton;
     private JPanel topbar;
+    private JList Chatcontent;
+    private JTextField messfield;
+    private JButton submitMessage;
     private JButton knowhowButton;
 
 
@@ -25,6 +28,9 @@ public class ChatGui {
         knowHowButton = makebtn(knowHowButton, true);
         homeworkButton = makebtn(homeworkButton, true);
         chatButton = makebtn(chatButton, false);
+        DefaultListModel model = new DefaultListModel();
+        model.addElement("Nachricht!");
+        Chatcontent.setModel(model);
 
         return Chatpane;
     }
