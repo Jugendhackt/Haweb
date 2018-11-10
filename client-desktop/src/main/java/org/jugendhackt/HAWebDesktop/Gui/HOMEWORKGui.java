@@ -1,6 +1,6 @@
-package main.org.jugendhackt.HAWebDesktop.Gui;
+package org.jugendhackt.HAWebDesktop.Gui;
 
-import main.org.jugendhackt.HAWebDesktop.Util;
+import org.jugendhackt.HAWebDesktop.Util;
 
 import javax.swing.*;
 import java.awt.*;
