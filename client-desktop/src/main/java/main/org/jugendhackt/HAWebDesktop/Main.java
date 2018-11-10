@@ -1,6 +1,6 @@
 package main.org.jugendhackt.HAWebDesktop;
 
-import main.org.jugendhackt.HAWebDesktop.Gui.Gui;
+import main.org.jugendhackt.HAWebDesktop.Gui.*;
 import main.org.jugendhackt.HAWebDesktop.communication.Websocket;
 
 import javax.swing.*;
@@ -8,9 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-static Websocket websocket;
+
+
+    JPanel mainpanel = new MainGui().MainGui();
+    JPanel knowhowpanel = new KNOWHOWGui().getKnowhowPanel();
+    JPanel homeworkpanel = new HOMEWORKGui().getHomeworkPanel();
+    JPanel chatpanel = new ChatGui().getChatpane();
+
+    static Websocket websocket;
     public static List<Message> messages;
-static final String conn = "ws://172.22.42.72:8888/ws";
+    static final String conn = "ws://172.22.42.72:8888/ws";
     public static void main(String[] args) throws InterruptedException {
         messages = new ArrayList<>();
         try {
