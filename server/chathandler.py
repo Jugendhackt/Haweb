@@ -7,11 +7,19 @@ import users # pylint: disable=E0401
 
 messages = []
 
+#def add_msg_to_msgs()
+
 def makejsonmessage(message,name="",new=""):
-    message = message.replace("<","	&#60;") # Info #
-    message = message.replace(">","	&#62;") # Run NO Html Code in chat (I hope)# 
+    message["message"]["text"] = message["message"]["text"].replace("<","	&#60;") # Info #
+    message["message"]["text"] = message["message"]["text"].replace(">","	&#62;") # Run NO Html Code in chat (I hope)# 
     time_m = str(time.strftime('%H:%M:%S', time.localtime()))
-    return '{"type":"chat","message":{"id":'+json.dumps(len(messages))+',"user":'+json.dumps(name)+',"text":'+json.dumps(message)+',"time":'+json.dumps(time_m)+'}}'
+    message["message"]["id"] = len(messages)
+    message["message"]["user"] = name
+    message["message"]["time"] = time_m
+    return message
+
+
+
 class UploadHandler(tornado.web.RequestHandler):
     def post(self):
         print (self.get_cookie("id"))

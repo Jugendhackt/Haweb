@@ -60,7 +60,7 @@ class DirectoryHandler(tornado.web.StaticFileHandler):
         if os.path.isdir(abspath):
             html = ""
             for line in open("error.html"):
-                html = html + line
+                html = html + linej
             return html
 
         if os.path.splitext(abspath)[1] == '.md':
@@ -87,8 +87,12 @@ application = tornado.web.Application([(r'/ws', websocketserver.WSHandler),(r"/u
 
     (r'/(.*)', DirectoryHandler, {'path': './'})
 ], **settings)
-
-if __name__ == "__main__":
-    print("Listening on port %d..." % PORT)
-    application.listen(PORT)
-IOLoop.instance().start()
+try:
+    if __name__ == "__main__":
+        print("Listening on port %d..." % PORT)
+        application.listen(PORT)
+    IOLoop.instance().start()
+except KeyboardInterrupt:
+    print("Shutting down")
+    #chatFile = open(open("../server/data/chats/" + "000000" + "/files/messages.json")
+    #chathandler.messages
