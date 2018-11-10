@@ -9,7 +9,6 @@ if sys.version_info.major == 3:
     import websocketserver, chathandler # pylint: disable=E0401
 else:
     sys.exit("Start Server in Python3")
-
 # config options
 define('port', default=8888, type=int, help='port to run web server on')
 define('debug', default=True, help='start app in debug mode')

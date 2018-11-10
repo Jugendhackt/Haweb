@@ -47,5 +47,15 @@ def add(user,username,passwd,override = False): # Override = Account Reset
             json.dump(usersjson,f)
             f.close()
         return True
-#def login(username,passwd):
-#   
+def addclient(username,passwd):
+    sessionid = ""
+    return sessionid
+def checkclient(sessionid):
+    username = ""
+    return username
+def delclient(sessionid):
+    succes = False
+    return succes
+def delclients(username):
+    succes = False
+    return succes
