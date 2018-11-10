@@ -7,8 +7,9 @@ def tabs():
     return '{"type":"tabs","Tabs":{"home":"%s","know-how":"%s","homework":"%s","chat":"%s"}}' %tabs
 def content():
     contents = []
-    for filepath in ("test"):
+    for filepath in ("Home","Know-How","Homework","Chat"):
         filepath = filepath.lower()+"/index.html"
         html = minidom.parse(filepath)
         contents.append(html.getElementById("content"))
     return '{"type":"content","contents":{"home":"%s","know-how":"%s","homework":"%s","chat":"%s"}}' %contents
+#content()

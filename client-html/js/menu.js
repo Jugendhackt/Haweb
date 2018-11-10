@@ -11,21 +11,11 @@ function mobliebutton(y) {
 }
 
 
-function changelanguage(lang) {
-  setCookie("lang", lang, 1000);
-  //tabs = JSON.parse(getData("localhost:8000/cgi-bin/tabs.py?lang="+lang));
-  cleartabs();
-  for (var tab in tabs.Tabs) {
-    addtab(tab, tabs.Tabs[tab]);
-  }
-  changetab("tab1");
-}
 tabidlist = [];
 //Tabs
 function cleartabs() {
   var tablist = document.getElementById("left");
   tablist.innerHTML = "";
-  setCookie("lang", slang, 100);
 }
 
 function addtab(tabid, tabname) {
@@ -48,20 +38,20 @@ function addtab(tabid, tabname) {
 
 }
 
-
 function changetab(tabid) {
   for (var oldtab in tabs.Tabs) {
     document.getElementById(oldtab).className = '';
   }
   document.getElementById(tabid).className = 'active';
-  window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '#' + tabid);
+  window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '/' + tabid);
 
   var contentpage = document.getElementById('content');
+  contentpage.innerHTML
 }
 
 function buildtabs() {
   for (var tab in tabs.Tabs) {
     addtab(tab, tabs.Tabs[tab]);
   }
-  changetab("tab1");
+  changetab("home");
 }
