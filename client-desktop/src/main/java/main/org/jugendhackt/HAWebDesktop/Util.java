@@ -49,6 +49,8 @@ public class Util {
                     Gui.frame.repaint();
                     Gui.frame.getContentPane().revalidate();
                     Gui.frame.setVisible(true);
+
+
                 }
             });
 
@@ -83,7 +85,8 @@ public class Util {
             msg = msg + mess.getString("user") + ": ";
             msg = msg + mess.getString("text");
             System.out.println(msg);
-            new ChatGui().addMessage(msg);
+            Message m = new Message(mess.getString("text"), mess.getString("user"), mess.getString("time"));
+            new ChatGui().addMessage(m);
         }
     }
 }

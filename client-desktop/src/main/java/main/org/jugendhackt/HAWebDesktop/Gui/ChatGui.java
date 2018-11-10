@@ -1,5 +1,7 @@
 package main.org.jugendhackt.HAWebDesktop.Gui;
 
+import main.org.jugendhackt.HAWebDesktop.Main;
+import main.org.jugendhackt.HAWebDesktop.Message;
 import main.org.jugendhackt.HAWebDesktop.Util;
 
 import javax.swing.*;
@@ -8,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChatGui {
+
+    DefaultListModel model = new DefaultListModel();
+
     private JPanel Chatpane;
     private JButton knowHowButton;
     private JButton homeworkButton;
@@ -17,7 +22,10 @@ public class ChatGui {
     private JList Chatcontent;
     private JTextField messfield;
     private JButton submitMessage;
+    private JPanel liste;
+    private JLabel messagesField;
     private JButton knowhowButton;
+
 
 
     public JPanel getChatpane() {
@@ -30,16 +38,17 @@ public class ChatGui {
         knowHowButton = makebtn(knowHowButton, true);
         homeworkButton = makebtn(homeworkButton, true);
         chatButton = makebtn(chatButton, false);
-        DefaultListModel model = new DefaultListModel();
 
-        Chatcontent.setModel(model);
+        //liste.add(new JLabel("Hallo Welt"));
 
         submitMessage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(Chatcontent.getModel().getSize());
+                Main.init();
             }
         });
+
+
 
         return Chatpane;
     }
@@ -57,15 +66,11 @@ public class ChatGui {
         return button;
     }
 
-    public void addMessage(String mess) {
-        ListModel model = Chatcontent.getModel();
-        DefaultListModel defaultListModel = new DefaultListModel();
+    public void addMessage(Message mess) {
+            Main.messages.add(mess);
+            //messagesField.setText(messagesField.getText() + "\n" + mess.getMessage());
+            System.out.println("Gesetzt");
 
-        for(int i = 0; i < model.getSize(); i++) {
-            defaultListModel.addElement(model.getElementAt(i));
-        }
-        Chatcontent.setModel(defaultListModel);
-        System.out.println("Eingesetzt!");
     }
 
 
