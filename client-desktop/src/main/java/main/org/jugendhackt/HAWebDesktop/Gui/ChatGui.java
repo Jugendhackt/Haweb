@@ -4,6 +4,8 @@ import main.org.jugendhackt.HAWebDesktop.Util;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ChatGui {
     private JPanel Chatpane;
@@ -29,8 +31,15 @@ public class ChatGui {
         homeworkButton = makebtn(homeworkButton, true);
         chatButton = makebtn(chatButton, false);
         DefaultListModel model = new DefaultListModel();
-        model.addElement("Nachricht!");
+
         Chatcontent.setModel(model);
+
+        submitMessage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(Chatcontent.getModel().getSize());
+            }
+        });
 
         return Chatpane;
     }
@@ -46,6 +55,17 @@ public class ChatGui {
 
 
         return button;
+    }
+
+    public void addMessage(String mess) {
+        ListModel model = Chatcontent.getModel();
+        DefaultListModel defaultListModel = new DefaultListModel();
+
+        for(int i = 0; i < model.getSize(); i++) {
+            defaultListModel.addElement(model.getElementAt(i));
+        }
+        Chatcontent.setModel(defaultListModel);
+        System.out.println("Eingesetzt!");
     }
 
 

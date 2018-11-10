@@ -6,6 +6,8 @@ import main.org.jugendhackt.HAWebDesktop.Gui.KNOWHOWGui;
 import main.org.jugendhackt.HAWebDesktop.Gui.MainGui;
 import main.org.jugendhackt.HAWebDesktop.Gui.*;
 import main.org.jugendhackt.HAWebDesktop.Gui.ChatGui;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -67,5 +69,21 @@ public class Util {
             return new ChatGui().getChatpane();
         }
         return null;
+    }
+
+
+    public static void messageRecived(String json) {
+        String msg;
+        JSONObject jsonobj = new JSONObject(json);
+        if(jsonobj.getString("type").equals("chat")) {
+            System.out.println("Nachricht!");
+            JSONObject mess = jsonobj.getJSONObject("message");
+            msg = "(";
+            msg = msg + mess.getString("time") + ") ";
+            msg = msg + mess.getString("user") + ": ";
+            msg = msg + mess.getString("text");
+            System.out.println(msg);
+            new ChatGui().addMessage(msg);
+        }
     }
 }

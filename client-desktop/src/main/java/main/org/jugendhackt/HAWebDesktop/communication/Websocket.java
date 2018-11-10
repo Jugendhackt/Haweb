@@ -1,5 +1,6 @@
 package main.org.jugendhackt.HAWebDesktop.communication;
 
+import main.org.jugendhackt.HAWebDesktop.Util;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 
@@ -17,6 +18,7 @@ public class Websocket {
             @Override
             public void onMessage( String message ) {
                 System.out.println(message);
+                Util.messageRecived(message);
             }
 
             @Override
