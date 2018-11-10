@@ -1,5 +1,2 @@
 .vscode/settings.json
-server/security/Users/users.pyc
-server/chathandler.pyc
-server/contenthandler.pyc
-server/websocketserver.pyc
+*.pyc
