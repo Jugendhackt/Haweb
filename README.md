@@ -16,7 +16,7 @@ sudo apt install python3-tornado
 sudo apt install python3-pyqt5
 
 ```
-or with pip 
+or with pip you need [python3]("https://www.python.org/downloads/") installed
 ```bash
 sudo pip3 install passlib
 
@@ -25,7 +25,7 @@ sudo pip3 install tornado
 sudo pip3 install pyqt5
 ```
 ##### Windows
-With pip
+With pip (you need [python3]("https://www.python.org/downloads/") installed)
 ```cmd
 pathtopythonexe -m pip install passlib
 
@@ -34,8 +34,19 @@ pathtopythonexe -m pip install tornado
 pathtopythonexe -m pip install pyqt5
 ```
 
----
+####Start the Server
 
+Linux
+```bash
+cd server # Be sure you are in the Haweb directory
+python3 server.py 
+```
+Windows
+```cmd
+cd server
+python server.py # Check that your Python is in the Env. 
+#Path if python2 is installed too run python 3 server.py
+```
 
 #### Chat System Idea
 
