@@ -34,7 +34,7 @@ pathtopythonexe -m pip install tornado
 pathtopythonexe -m pip install pyqt5
 ```
 
-####Start the Server
+#### Start the Server
 
 Linux
 ```bash
@@ -45,7 +45,7 @@ Windows
 ```cmd
 cd server
 python server.py # Check that your Python is in the Env. 
-#Path if python2 is installed too run python 3 server.py
+#Path if python2 is installed too run python3 server.py
 ```
 
 #### Chat System Idea
