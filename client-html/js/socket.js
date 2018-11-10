@@ -1,6 +1,5 @@
 window.addEventListener("load", connect());
 var socket;
-
 function connect() {
     // create websocket instance
     socket = new WebSocket("ws://" + location.hostname + ":8888/ws");
@@ -8,6 +7,8 @@ function connect() {
     socket.onmessage = function (event) {
         // put text into our output div
         console.log(event.data);
+        var msg = new SpeechSynthesisUtterance();
+        window.speechSynthesis.speak(msg);
         var newmessage = JSON.parse(event.data);
         console.log(newmessage);
         if (newmessage.type == "chat") {
