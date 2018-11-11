@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
 
     public static final ChatGui chatGui = new ChatGui();
-    static final String conn = "ws://localhost:8888/ws";
+    static final String conn = "ws://192.168.160.116:8888/ws";
     public static Websocket websocket;
     public static JPanel chatpanel = chatGui.getChatpane();
     public static JPanel homeworkpanel = new HOMEWORKGui().getHomeworkPanel();

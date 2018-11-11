@@ -6,6 +6,7 @@ import main.org.jugendhackt.HAWebDesktop.Util;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 public class Gui {
     public static JFrame frame;
@@ -43,7 +44,7 @@ public class Gui {
             chatpane.add(time);
         }
 
-
+        //frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("resources/favicon.ico")));
         frame.getContentPane().add(Util.getPanel(0));
         //frame.getContentPane().add(chatpane);
         frame.setSize(1920, 1080);
