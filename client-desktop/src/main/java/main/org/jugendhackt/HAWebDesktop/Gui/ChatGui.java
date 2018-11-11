@@ -42,11 +42,14 @@ public class ChatGui {
 
         //liste.add(new JLabel("Hallo Welt"));
 
+        Font liste = new Font("Arial1", Font.BOLD, 25);
+        output.setFont(liste);
+
         submitMessage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.init();
-                //Main.websocket.sendmessage("chat", messfield.getText());
+                //Main.init();
+                Main.websocket.sendmessage("chat", messfield.getText());
                 //messagesField.setText("Hey wake up!");
             }
         });
@@ -73,8 +76,8 @@ public class ChatGui {
     public void addMessage(Message mess) {
         Main.messages.add(mess);
         output.append("\n(" + mess.getTimestamp() + ") " + mess.getSender() + ": " + mess.getMessage());
-        System.out.println("Appended: " + "(" + mess.getTimestamp() + ") " + mess.getSender() + ": " + mess.getMessage());
-        System.out.println(output.getText());
+        //System.out.println("Appended: " + "(" + mess.getTimestamp() + ") " + mess.getSender() + ": " + mess.getMessage());
+        //System.out.println(output.getText());
     }
 
 

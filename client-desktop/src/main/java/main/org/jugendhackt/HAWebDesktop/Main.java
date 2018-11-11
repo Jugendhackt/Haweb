@@ -33,8 +33,8 @@ public class Main {
         }
 
 
-        //init();
-        //Thread.sleep(1000);
+        init();
+        Thread.sleep(1000);
         new Gui();
 
 
