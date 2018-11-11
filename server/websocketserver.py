@@ -11,13 +11,14 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         self.clients.append(self)
         print ('[Server] New connection')
         self.write_message(contenthandler.tabs())
-        
         for message in chathandler.messages[chatid]:
             self.write_message(json.dumps(message))
     def on_message(self, message):
         clientadress = self.request.remote_ip
         print (message)
         message = json.loads(message)
+        if message["message"] = "":
+            return
         if "chatid" not in message.keys():
             message["chatid"] = chatid
         print (message["type"]) 
