@@ -5,7 +5,7 @@ if sys.version_info.major == 3:
     from tornado.ioloop import IOLoop
     from tornado.options import define, options
     from tornado.escape import xhtml_escape
-    import socket,time
+    import socket,time, json
     import websocketserver, chathandler # pylint: disable=E0401
 else:
     sys.exit("Start Server in Python3")
@@ -87,8 +87,12 @@ application = tornado.web.Application([(r'/ws', websocketserver.WSHandler),(r"/u
 
     (r'/(.*)', DirectoryHandler, {'path': './'})
 ], **settings)
-
-if __name__ == "__main__":
-    print("Listening on port %d..." % PORT)
-    application.listen(PORT)
-IOLoop.instance().start()
+try:
+    if __name__ == "__main__":
+        print("Listening on port %d..." % PORT)
+        application.listen(PORT)
+    IOLoop.instance().start()
+except KeyboardInterrupt:
+    print("Shutting down")
+    with open("../server/data/msgs.json", "w+") as msgsFile:
+        msgsFile.write(json.dumps(chathandler.messages))

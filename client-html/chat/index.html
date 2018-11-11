@@ -2,29 +2,62 @@
 <html>
 
 <head>
-  <title>Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/chat.css">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2">
-  <link rel="stylesheet" href="/css/main.css">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="manifest" href="/manifest.json">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/css/window.css">
+    <link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" href="icon/favicon.ico?v=3" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Anton K" name="author">
+    <meta content="Julius S" name="author">
+    <meta content="" name="description">
+    <title>Chat | Hausaufgaben Webseite</title>
 </head>
 <body>
-  <h2>Chat</h2>
-  <div id="chatcontent" class="chatcontent">
-  </div>
-  <form class="footer" id="chatsend">
-    <input id="input"></input>
-    <input id="filebut" type="button" value="↑"></input>
-    <input type="submit" value="Send"></input>
-  </form>
-  <div id="alerts" style="padding-left:0%">
+    <nav class="topnav" id="myTopnav">
+        <span id="left">
+          
+        </span>
+    
+        <span id="right"> 
+          <!-- <a class="settings" style="float:right" onmouseup="togglesettigs()" href="javascript:void(0)">
+            ⚙
+          </a> -->
+          <a href="javascript:void(0)" class="icon" onmouseup="mobliebutton(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </a>
+        </span>
+    
+      </nav>
+  <div id="content" class="content">
+    <h2>Chat</h2>
+    <div id="chatcontent" class="chatcontent">
+    </div>
+    <form class="footer" id="chatsend">
+      <input id="input">
+      <input id="filebut" type="file">
+      <input type="submit" value="Send">
+    </form>
+    <div id="alerts" style="padding-left:0%">
 
 
+    </div>
   </div>
   <script src="/js/alerts.js" charset="utf-8"></script>
   <script src="/js/socket.js" charset="utf-8"></script>
+  <script src="/js/main.js" charset="utf-8"></script>
+  <script src="/js/menu.js" charset="utf-8"></script>
+  <script src="/js/settings.js" charset="utf-8"></script>
   <script src="/js/chat.js" charset="utf-8"></script>
 </body>
 

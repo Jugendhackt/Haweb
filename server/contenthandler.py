@@ -1,8 +1,22 @@
 # -*- coding: utf-8 -*-
-
-def tab(lang,logined):
-    if logined == True:
-       tabs = ("Home","Know-How","Homework","Chat") 
-    else:
-        tabs = ("Home","Know-How")
-    return '{"type":"tabs","Tabs":{"tab1":"%s","tab2":"%s","tab3":"%s","tab4":"%s"}}' %tabs
+import bs4
+import os
+from bs4 import BeautifulSoup
+os.chdir("../client-html/")
+tabslist = ("Home","Know-How","Homework","Chat")
+contentslist = []
+def tabs():
+    return '{"type":"tabs","Tabs":{"home":"%s","know-how":"%s","homework":"%s","chat":"%s"}}' %tabslist
+def contents():
+    html = ""
+    for site in tabslist:
+        site = site.lower()
+        print (site)
+        print (site+"/index.html")
+        for line in open(site+"/index.html"):
+            html = html+line
+        parsed_html = BeautifulSoup(html, "html.parser")
+        contentslist.append(parsed_html.find(id = "content"))
+    return contentslist
+print(contents())
+print(tabs())

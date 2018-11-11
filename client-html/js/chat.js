@@ -23,6 +23,21 @@ formchat.addEventListener("submit", function (e) {
         sendsocket("chat",input_text);
         e.preventDefault();
         input.value = "";
+
+        if(document.getElementById("filebut").value == ""){
+            document.getElementById("filebut").value = "";
+        }else{
+            let file = document.getElementById("filebut").files[0];
+            let formData = new FormData();
+            formData.append("file1", file);
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", '/upload');
+            xhr.send(formData);
+            document.getElementById("filebut").value = "";
+            malert("Die Datei wurde hochgeladen");
+        }
+            
+
     }else{
         malert("Du bist im Moment nicht mit dem Server verbunden");
     }
