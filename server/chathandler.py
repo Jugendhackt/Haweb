@@ -30,11 +30,15 @@ def makejsonmessage(message,name="",new=""):
 class UploadHandler(tornado.web.RequestHandler):
     def post(self):
         print (self.get_cookie("id"))
-        file1 = self.request.files['file1'][0]
-        original_fname = file1['filename']
-        extension = os.path.splitext(original_fname)[1]
-        fname = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(6))
-        final_filename= original_fname+fname+extension
-        output_file = open("../server/data/chats/000000/files/" + final_filename, 'w+')
-        output_file.write(file1['body'])
-        self.finish("file" + final_filename + " is uploaded")
+        #file1 = self.request.files['file1'][0]
+
+        for filet in self.request.files["file1"]:
+            original_fname = filet['filename']
+            extension = os.path.splitext(original_fname)[1]
+            fname = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(6))
+            final_filename= original_fname+fname+extension
+            print (final_filename)
+            os.path.join(final_filename)
+            output_file = open("../server/data/chats/000000/files/" + final_filename, 'wb')
+            output_file.write(filet['body'])
+            self.finish("file" + final_filename + " is uploaded")
