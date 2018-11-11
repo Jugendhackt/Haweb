@@ -1,0 +1,16 @@
+name: HA-Web mc integration
+version: 1.0.0
+description: HA-Web-Chat into Minecraft
+
+main: org.jugendhackt.HAWebMC.Main
+
+commands:
+  connect:
+    description: Connects to server
+    usage: /connect ws://ip.com:8888/ws
+  disconnect:
+    description:  Disconnects
+    usage: /disconnect
+  sendmessage:
+    description: Send a message to the chat
+    usage: /sendmessage <Nachricht>
