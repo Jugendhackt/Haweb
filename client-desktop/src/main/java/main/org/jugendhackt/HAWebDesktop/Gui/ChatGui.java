@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class ChatGui {
 
@@ -42,15 +44,38 @@ public class ChatGui {
 
         //liste.add(new JLabel("Hallo Welt"));
 
-        Font liste = new Font("Arial1", Font.BOLD, 25);
+        Font liste = new Font("Arial1", Font.PLAIN, 15);
         output.setFont(liste);
+
 
         submitMessage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Main.init();
                 Main.websocket.sendmessage("chat", messfield.getText());
+                messfield.setText("");
                 //messagesField.setText("Hey wake up!");
+            }
+        });
+
+        messfield.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    Main.websocket.sendmessage("chat", messfield.getText());
+                    messfield.setText("");
+                }
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
             }
         });
 
