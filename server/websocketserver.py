@@ -17,7 +17,7 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         clientadress = self.request.remote_ip
         print (message)
         message = json.loads(message)
-        if message["message"] = "":
+        if message["message"] == "":
             return
         if "chatid" not in message.keys():
             message["chatid"] = chatid
