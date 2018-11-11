@@ -2,6 +2,7 @@ package main.org.jugendhackt.HAWebDesktop.Gui;
 
 import main.org.jugendhackt.HAWebDesktop.Main;
 import main.org.jugendhackt.HAWebDesktop.Message;
+import main.org.jugendhackt.HAWebDesktop.Util;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,9 +26,9 @@ public class Gui {
         Font timestamp = new Font("Arial", Font.LAYOUT_RIGHT_TO_LEFT, 28);
         Font sender = new Font("Arial", Font.ITALIC, 30);
 
-        Main.messages.add(new Message("Hey", "0.0.0.0", "00:00:00"));
-        Main.messages.add(new Message("Wake", "0.1.0.1", "00:20:00"));
-        Main.messages.add(new Message("Up", "0.1.0.1", "00:20:00"));
+        //Main.messages.add(new Message("Hey", "0.0.0.0", "00:00:00"));
+        //Main.messages.add(new Message("Wake", "0.1.0.1", "00:20:00"));
+        //Main.messages.add(new Message("Up", "0.1.0.1", "00:20:00"));
 
         for (Message s:
              Main.messages) {
@@ -43,7 +44,8 @@ public class Gui {
         }
 
 
-        frame.getContentPane().add(chatpane);
+        frame.getContentPane().add(Util.getPanel(0));
+        //frame.getContentPane().add(chatpane);
         frame.setSize(1920, 1080);
         frame.setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         //frame.pack();

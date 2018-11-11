@@ -9,15 +9,15 @@ import java.util.List;
 
 public class Main {
 
-
-    JPanel mainpanel = new MainGui().MainGui();
-    JPanel knowhowpanel = new KNOWHOWGui().getKnowhowPanel();
-    JPanel homeworkpanel = new HOMEWORKGui().getHomeworkPanel();
-    JPanel chatpanel = new ChatGui().getChatpane();
-
-    static Websocket websocket;
+    public static final ChatGui chatGui = new ChatGui();
+    static final String conn = "ws://localhost:8888/ws";
+    public static Websocket websocket;
+    public static JPanel chatpanel = chatGui.getChatpane();
+    public static JPanel homeworkpanel = new HOMEWORKGui().getHomeworkPanel();
+    public static JPanel knowhowpanel = new KNOWHOWGui().getKnowhowPanel();
     public static List<Message> messages;
-    static final String conn = "ws://172.22.42.72:8888/ws";
+    public static JPanel mainpanel = new MainGui().MainGui();
+
     public static void main(String[] args) throws InterruptedException {
         messages = new ArrayList<>();
         try {
@@ -33,8 +33,8 @@ public class Main {
         }
 
 
-        init();
-        Thread.sleep(1000);
+        //init();
+        //Thread.sleep(1000);
         new Gui();
 
 
@@ -43,6 +43,7 @@ public class Main {
 
     public static void init() {
         try {
+            System.out.println("init()");
             websocket = new Websocket();
             websocket.createWebsocket(conn);
         }catch (Exception e) {

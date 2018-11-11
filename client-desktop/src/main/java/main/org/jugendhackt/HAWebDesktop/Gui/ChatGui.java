@@ -23,6 +23,7 @@ public class ChatGui {
     private JTextField messfield;
     private JButton submitMessage;
     private JPanel liste;
+    private JTextArea output;
     private JLabel messagesField;
     private JButton knowhowButton;
 
@@ -45,8 +46,11 @@ public class ChatGui {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.init();
+                //Main.websocket.sendmessage("chat", messfield.getText());
+                //messagesField.setText("Hey wake up!");
             }
         });
+
 
 
 
@@ -67,10 +71,10 @@ public class ChatGui {
     }
 
     public void addMessage(Message mess) {
-            Main.messages.add(mess);
-            //messagesField.setText(messagesField.getText() + "\n" + mess.getMessage());
-            System.out.println("Gesetzt");
-
+        Main.messages.add(mess);
+        output.append("\n(" + mess.getTimestamp() + ") " + mess.getSender() + ": " + mess.getMessage());
+        System.out.println("Appended: " + "(" + mess.getTimestamp() + ") " + mess.getSender() + ": " + mess.getMessage());
+        System.out.println(output.getText());
     }
 
 

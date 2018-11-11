@@ -1,12 +1,6 @@
 package main.org.jugendhackt.HAWebDesktop;
 
 import main.org.jugendhackt.HAWebDesktop.Gui.Gui;
-
-import main.org.jugendhackt.HAWebDesktop.Gui.KNOWHOWGui;
-import main.org.jugendhackt.HAWebDesktop.Gui.MainGui;
-import main.org.jugendhackt.HAWebDesktop.Gui.*;
-import main.org.jugendhackt.HAWebDesktop.Gui.ChatGui;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.swing.*;
@@ -57,18 +51,18 @@ public class Util {
         return button;
     }
 
-    private static JPanel getPanel(int actionPane) {
+    public static JPanel getPanel(int actionPane) {
         if(actionPane == Gui.HOME) {
-            return new MainGui().MainGui();
+            return Main.mainpanel;
         }
         if(actionPane == Gui.KNOWHOW) {
-            return new KNOWHOWGui().getKnowhowPanel();
+            return Main.knowhowpanel;
         }
         if(actionPane == Gui.HOMEWORK) {
-            return new HOMEWORKGui().getHomeworkPanel();
+            return Main.homeworkpanel;
         }
         if(actionPane == Gui.CHAT) {
-            return new ChatGui().getChatpane();
+            return Main.chatpanel;
         }
         return null;
     }
@@ -86,7 +80,7 @@ public class Util {
             msg = msg + mess.getString("text");
             System.out.println(msg);
             Message m = new Message(mess.getString("text"), mess.getString("user"), mess.getString("time"));
-            new ChatGui().addMessage(m);
+            Main.chatGui.addMessage(m);
         }
     }
 }
