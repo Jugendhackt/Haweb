@@ -1,4 +1,5 @@
 var tabs;
+var contents;
 
 function mobliebutton(y) {
   var x = document.getElementById("myTopnav");
@@ -28,7 +29,7 @@ function addtab(tabid, tabname) {
       changetab(tabid);
     }, false);
   } else {
-    console.log("Your Browser don't support addEventListener");
+    console.log("Your Browser don't support addEventListener");   
   }
   newtab.innerHTML = tabname;
   newtab.id = tabid;
@@ -46,7 +47,7 @@ function changetab(tabid) {
   window.history.pushState(tabs.Tabs[tabid], 'Hausaufgaben Webseite', '/' + tabid);
 
   var contentpage = document.getElementById('content');
-  contentpage.innerHTML
+  contentpage.innerHTML = contents[tabid];
 }
 
 function buildtabs() {
