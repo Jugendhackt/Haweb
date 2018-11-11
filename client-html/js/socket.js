@@ -9,10 +9,11 @@ function connect() {
     socket.onmessage = function (event) {
         // put text into our output div
         console.log(event.data);
-        var newmessage = JSON.parse(event.data);
         console.log(newmessage);
+        var newmessage = JSON.parse(event.data);
         if (newmessage.type == "chat") {
             pling.play();
+            window.scrollTo(0,document.body.scrollHeight);
             getMessage(newmessage);
          }if(newmessage.type == "tabs"){
              tabs = newmessage;

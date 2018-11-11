@@ -54,5 +54,6 @@ function buildtabs() {
   for (var tab in tabs.Tabs) {
     addtab(tab, tabs.Tabs[tab]);
   }
-  changetab("home");
+  changetab(location.href);
+  log(location.pathname);
 }
