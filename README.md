@@ -47,7 +47,7 @@ python server.py # Check that your Python is in the Env.
 ## Client
 
 ### Website
-
+If the Server is running goto yourip:8888
 
 
 ### Desktop application
