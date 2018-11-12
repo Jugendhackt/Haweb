@@ -1,3 +1,4 @@
+// This is an special build get the newest at https://github.com/antonk123/haweb
 function malert(text) { // Alert in the Bottom of the Page
     // Get the alert DIV
     var alertbox = document.getElementById("alerts");

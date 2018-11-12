@@ -1,3 +1,4 @@
+// This is an special build get the newest at https://github.com/antonk123/haweb
 window.addEventListener("load", connect());
 var socket;
 var pling = new Audio();

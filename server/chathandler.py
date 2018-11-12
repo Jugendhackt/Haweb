@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#This is an special build get the newest at https://github.com/antonk123/haweb
 import os,time,json,sys
 import tornado,random,string
 sys.path.append("security/Users/")

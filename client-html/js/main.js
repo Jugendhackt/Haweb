@@ -1,3 +1,4 @@
+// This is an special build get the newest at https://github.com/antonk123/haweb
 //Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {

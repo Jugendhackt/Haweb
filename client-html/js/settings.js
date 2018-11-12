@@ -1,4 +1,5 @@
-var settingsstatus = false;
+// This is an special build get the newest at https://github.com/antonk123/haweb
+var settingstatus = false;
 
 var slangs = document.getElementById('slang');
 var slang = slangs.options[slangs.selectedIndex].value;

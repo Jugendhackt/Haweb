@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#This is an special build get the newest at https://github.com/antonk123/haweb
 import sys,os
 if sys.version_info.major == 3:
     import tornado.web
